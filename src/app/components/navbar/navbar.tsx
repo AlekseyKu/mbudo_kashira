@@ -69,7 +69,7 @@ export default function Navbar({navlight,tagline}:{navlight:any, tagline:any}) {
                 {/* <BuyBtn navlight={navlight}/> */}
 
                 <div id="navigation" className={`${toggle ? 'block' : 'none'}`}>
-                    <ul className={`navigation-menu justify-start ${navlight ? 'nav-light' : ''}`}>
+                    <ul className={`navigation-menu justify-end ${navlight ? 'nav-light' : ''}`}>
                         <li className={`has-submenu parent-parent-menu-item ${['/','/index-two','/index-three','/index-four','/index-five'].includes(manu) ? 'active' : ''}`}>
                             <Link href="/" onClick={()=>setSubManu(subManu === '/index-item' ? '' : '/index-item')}>
                                 ГЛАВНАЯ
@@ -107,7 +107,14 @@ export default function Navbar({navlight,tagline}:{navlight:any, tagline:any}) {
                             </ul>
                         </li>
 
-                        <li className={`has-submenu parent-parent-menu-item ${['/features','/pricing','/instructors','/faqs','/blogs','/blog-sidebar','/blog-detail'].includes(manu) ? 'active' : ''}`}>
+                        <li>
+                            <Link href="/blog" className={`sub-menu-item ${manu === '/blog' ? 'text-accent-red' : ''}`}>
+                                НАШ БЛОГ
+                            </Link>
+                        </li>
+                
+
+                        {/* <li className={`has-submenu parent-parent-menu-item ${['/features','/pricing','/instructors','/faqs','/blogs','/blog-sidebar','/blog-detail'].includes(manu) ? 'active' : ''}`}>
                             <Link href="#" onClick={()=>setSubManu(subManu === '/page-item' ? '' : '/page-item')}>Pages</Link><span className="menu-arrow"></span>
                             <ul className={`submenu ${['/page-item','/auth-item','/blog-item','/special-item'].includes(subManu) ? 'open' : ''}`}>
                                 <li className={manu === '/features' ? 'active' : ''}><Link href="/features" className="sub-menu-item">Features</Link></li>
@@ -136,9 +143,15 @@ export default function Navbar({navlight,tagline}:{navlight:any, tagline:any}) {
                                     </ul>  
                                 </li>
                             </ul>
+                        </li> */}
+
+                        <li>
+                            <Link href="/contact" className={`sub-menu-item ${manu === '/contact' ? 'text-accent-red' : ''}`}>
+                                КОНТАКТЫ
+                            </Link>
                         </li>
                 
-                        <li className={manu === '/contactus' ? 'active' : ''}><Link href="/contact" className="sub-menu-item">КОНТАКТЫ</Link></li>
+                        {/* <li className={manu === '/contactus' ? 'active' : ''}><Link href="/contact" className="sub-menu-item">КОНТАКТЫ</Link></li> */}
                     </ul>
                 </div>
             </div>

@@ -12,6 +12,17 @@ interface FooterSocial{
     icon: IconType;
 }
 
+const menuLinks = [
+    { name: 'Главная', href: '/' },
+    { name: 'О нас', href: '/aboutus' },
+    { name: 'Тренировки', href: '/trainings' },
+    { name: 'Тенеры', href: '/coaches' },
+    { name: 'Расписание', href: '/tables' },
+    { name: 'Наш блог', href: '/blog' },
+    { name: 'Документы', href: '/docs' },
+    { name: 'Контакты', href: '/contact' },
+]
+
 export default function Footer() {
   return (
         <footer className="relative bg-slate-900 dark:bg-slate-800">
@@ -20,7 +31,7 @@ export default function Footer() {
                     <div className="relative py-16">
                         <div className="relative w-full">
                             <div className="grid md:grid-cols-12 grid-cols-1 gap-6">
-                                <div className="lg:col-span-8 md:col-span-12">
+                                <div className="lg:col-span-9 md:col-span-12">
                                     <Link href="#" className="text-[22px] focus:outline-none">
                                         <Image src='/images/logo_h_dark.png' width={300} height={100} alt=""/>
                                     </Link>
@@ -30,33 +41,36 @@ export default function Footer() {
                                     </p>
 
                                     <div className="flex mt-6">
-                                        <FiMapPin className="iconoir-map-pin align-middle text-2xl text-violet-600 me-2"/>
+                                        <FiMapPin className="iconoir-map-pin align-middle text-2xl text-accent-red me-2"/>
                                         <div className="">
                                             <h6 className="text-gray-300">Московская область, г.Кашира, ул.Металлургов, дом 7, корпус 2 </h6>
                                         </div>
                                     </div>
                             
                                     <div className="flex mt-4">
-                                        <FiPhoneCall className="iconoir-phone align-middle text-2xl text-violet-600 me-2"/>
+                                        <FiPhoneCall className="iconoir-phone align-middle text-2xl text-accent-red me-2"/>
                                         <div className="">
                                             <a href="tel:+152534-468-854" className="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">+7 496 697 0004</a>
                                         </div>
                                     </div>
                                 </div>
                         
-                                <div className="lg:col-span-2 md:col-span-3">
-                                    <h5 className="tracking-[1px] text-gray-100 font-semibold text-lg">Usefull Links</h5>
+                                <div className="lg:col-span-3 md:col-span-3">
+                                    <h5 className="tracking-[1px] text-gray-100 font-semibold text-lg">МЕНЮ</h5>
 
-                                    <ul className="list-none footer-list mt-6">
-                                        {footerLink1.map((item:any,index:number)=>{
-                                            return(
-                                                <li key={index} className="mt-[10px] first:mt-0 flex items-center"><FiChevronRight className="text-gray-400 align-middle me-1"></FiChevronRight><Link href="" className="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">{item}</Link></li>
-                                            )
-                                        })}
+                                    <ul className="grid-cols-2 list-none footer-list mt-3">
+                                        {menuLinks.map((item, index) => (
+                                            <li key={index} className="mt-[10px] first:mt-0 flex items-center">
+                                            <FiChevronRight className="text-gray-400 align-middle me-1" />
+                                            <Link href={item.href} className="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
+                                                {item.name}
+                                            </Link>
+                                            </li>
+                                        ))}
                                     </ul>
                                 </div>
                         
-                                <div className="lg:col-span-2 md:col-span-3">
+                                {/* <div className="lg:col-span-2 md:col-span-3">
                                     <h5 className="tracking-[1px] text-gray-100 font-semibold text-lg">Our Institute</h5>
 
                                     <ul className="list-none footer-list mt-6">
@@ -66,7 +80,7 @@ export default function Footer() {
                                             )
                                         })}
                                     </ul>
-                                </div>
+                                </div> */}
     
                                 {/* <div className="lg:col-span-4 md:col-span-6">
                                     <h5 className="tracking-[1px] text-gray-100 font-semibold text-lg">Get In Touch</h5>
@@ -96,14 +110,15 @@ export default function Footer() {
                 <div className="container relative text-center">
                     <div className="grid md:grid-cols-2 items-center gap-6">
                         <div className="md:text-start text-center">
-                            <p className="mb-0 text-gray-300">© {new Date().getFullYear()} МБУДО Cпортивная школа «Кашира» <i className="mdi mdi-heart text-red-600"></i> by <Link href="https://shreethemes.in/" target="_blank" className="text-reset">DEXSA</Link>.</p>
+                            {/* <p className="mb-0 text-gray-300">© {new Date().getFullYear()} МБУДО Cпортивная школа «Кашира» <i className="mdi mdi-heart text-red-600"></i> by <Link href="https://dexstudioapp.site/" target="_blank" className="text-reset">DEXSA</Link>.</p> */}
+                            <p className="mb-0 text-gray-300">{new Date().getFullYear()} © МБУДО Cпортивная школа «Кашира»</p>
                         </div>
 
-                        <ul className="list-disc footer-list md:text-end text-center space-x-3">
+                        {/* <ul className="list-disc footer-list md:text-end text-center space-x-3">
                             <li className="inline-block"><i className="mdi mdi-circle-medium text-gray-400"></i> <Link href="/terms" className="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">Terms</Link></li>
                             <li className="inline-block mt-[10px] md:mt-0"><i className="mdi mdi-circle-medium text-gray-400"></i> <Link href="/privacy" className="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">Privacy</Link></li>
                             <li className="inline-block mt-[10px] md:mt-0"><i className="mdi mdi-circle-medium text-gray-400"></i> <Link href="/login" className="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">Login</Link></li>
-                        </ul>
+                        </ul> */}
                     </div>
                 </div>
             </div>

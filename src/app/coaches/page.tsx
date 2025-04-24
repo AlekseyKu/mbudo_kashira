@@ -26,7 +26,7 @@ export default function CoachesPage() {
     <>
       <Navbar navlight={true} tagline={false}/> 
 
-      <section className="relative table w-full py-32 lg:py-30 bg-no-repeat bg-center bg-cover" style={{backgroundImage:`url('/images/sport/сollage.webp')`}}>
+      <section className="relative table w-full py-32 lg:py-30 bg-no-repeat bg-center bg-cover" style={{backgroundImage:`url('/images/sport/collages-3.webp')`}}>
         <div className="absolute inset-0 bg-black opacity-80"></div>
         <div className="container relative">
           <div className="grid grid-cols-1 text-center mt-10">
