@@ -1,3 +1,4 @@
+// src\app\contact\page.tsx
 'use client'
 
 import React, { useEffect, useRef, useState, useCallback } from 'react'
@@ -99,6 +100,7 @@ export default function ContactsPage() {
       <Script
         src={`https://api-maps.yandex.ru/v3/?apikey=${process.env.NEXT_PUBLIC_YANDEX_MAPS_API_KEY}&lang=ru_RU`}
         strategy="afterInteractive"
+        referrerPolicy="origin"
         onLoad={handleMapScriptLoad}
         // strategy="beforeInteractive"
       />
