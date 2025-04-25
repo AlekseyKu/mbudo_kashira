@@ -23,6 +23,9 @@ export default function ContactsPage() {
   const markersRef = useRef<any[]>([])
   const [selected, setSelected] = useState(locations[0])
 
+  // Флаг загрузки карты
+  const [isMapLoaded, setIsMapLoaded] = useState(false)
+
   // Функция для создания/обновления маркеров
   const updateMarkers = useCallback(() => {
     if (!mapInstance.current || !window.ymaps3) return
@@ -88,11 +91,12 @@ export default function ContactsPage() {
       // behaviors: ['drag', 'pinchZoom'], // Отключаем scrollZoom
     })
     mapInstance.current = map
-
     map.addChild(new YMapDefaultSchemeLayer())
     map.addChild(new YMapDefaultFeaturesLayer())
 
+
     updateMarkers()
+    setIsMapLoaded(true)
   }
 
   return (
@@ -128,9 +132,17 @@ export default function ContactsPage() {
         <div className="grid lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2">
             <div className="w-full h-[600px] rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800">
-              <div ref={mapRef} className="w-full h-full" />
+              <div className="w-full h-full relative">
+                {/* Оверлей с текстом пока карта не готова */}
+                {!isMapLoaded && (
+                  <div className="absolute inset-0 z-10 flex items-center justify-center bg-white/90">
+                    <span className="text-lg font-medium">Карта загружается…</span>
+                  </div>
+                )}
+                <div ref={mapRef} className="w-full h-full" />
+                </div>
+              </div>
             </div>
-          </div>
           <div className="lg:col-span-1">
             <h2 className="text-2xl font-bold text-center text-primary-blue dark:text-white mb-6">Наши объекты</h2>
             <div className="space-y-4">
