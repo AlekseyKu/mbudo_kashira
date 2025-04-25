@@ -1,3 +1,4 @@
+// src\app\components\vk\vkUtil.ts
 import { VKPost, VKPhoto, VKVideo } from './vkPostCard'
 
 export const getVisualUrl = (post: VKPost): string => {
