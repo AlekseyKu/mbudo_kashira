@@ -42,5 +42,5 @@ yarn-error.log*
 next-env.d.ts
 
 # json
-/public/vk-posts-cache.json
+# /public/vk-posts-cache.json
 
