@@ -50,7 +50,7 @@ export default function Footer() {
                                     <div className="flex mt-4">
                                         <FiPhoneCall className="iconoir-phone align-middle text-2xl text-accent-red me-2"/>
                                         <div className="">
-                                            <a href="tel:+152534-468-854" className="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">+7 496 697 0004</a>
+                                            <a href="tel:+152534-468-854" className="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">8 496-696-7689</a>
                                         </div>
                                     </div>
                                 </div>

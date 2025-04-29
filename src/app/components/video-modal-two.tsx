@@ -12,7 +12,7 @@ export default function VideoModalTwo() {
   return (
     <>
         <div className="mt-6">
-            <Link href="" className="h-10 px-6 tracking-wide inline-flex items-center justify-center font-medium rounded-md bg-primary-blue text-white">НАШИ ТРЕНИРОВКИ<i className="mdi mdi-arrow-right align-middle ms-1"></i></Link>
+            <Link href="/trainings" className="h-10 px-6 tracking-wide inline-flex items-center justify-center font-medium rounded-md bg-primary-blue text-white">НАШИ ТРЕНИРОВКИ<i className="mdi mdi-arrow-right align-middle ms-1"></i></Link>
             {/* <Link href="#!" scroll={false} onClick={() => setOpen(true)} className="size-10 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center rounded-full bg-violet-600/10 hover:bg-violet-600 text-violet-600 hover:text-white ms-1 lightbox"><FiVideo className="h-4 w-4"/></Link><span className="font-medium text-slate-400 dark:text-white/80 ms-1 align-middle"> Watch Now</span> */}
         </div>
         <ModalVideo

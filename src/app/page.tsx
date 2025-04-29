@@ -43,12 +43,12 @@ interface TrainingsData{
     desc: string;
 }
 
-
 interface CounterData{
     value: number;
     symbol: string;
     title: string;
 }
+
 interface CoursesData{
     id: number;
     image: string;
@@ -76,10 +76,10 @@ export default function Page() {
 
             {/* MAIN */}
             <section className="relative overflow-hidden md:py-32 py-30">
-                <div className="container relative md:mt-16 mt-6">
+                <div className="container relative md:mt-26 mt-6">
                     <div className="grid lg:grid-cols-12 md:grid-cols-2 grid-cols-1 items-center gap-6">
-                        <div className="lg:col-span-7">
-                            <h6 className="text-primary-blue dark:text-slate-500 font-semibold mb-3 uppercase">Cпортивная школа «Кашира»</h6>
+                        <div className="pt-20 md:pt-0 lg:col-span-7">
+                            <h6 className="hidden md:block text-primary-blue dark:text-slate-500 font-semibold mb-3 uppercase">Cпортивная школа «Кашира»</h6>
                             <h1 className="font-bold text-primary-blue dark:text-white lg:leading-normal leading-normal tracking-wide text-4xl lg:text-5xl mb-5">МЕСТО СИЛЫ. <br/>  <span className="bg-gradient-to-l from-accent-red to-primary-blue dark:to-white text-transparent bg-clip-text">ПРОСТРАНСТВО БУДУЩИХ ПОБЕД.</span></h1>
                             <p className="text-slate-500 text-lg max-w-xl">Наша миссия — воспитывать чемпионов <br/> и сильных личностей через спорт.</p>
                             
