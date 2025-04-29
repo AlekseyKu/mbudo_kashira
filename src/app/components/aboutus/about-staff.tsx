@@ -8,15 +8,15 @@ const staff = [
   { name: "Бирдычкина Лидия Васильевна", position: "Заместитель директора по административно-хозяйственной деятельности" },
   { name: "Сухов Сергей Анатольевич", position: "Заместитель директора по безопасности" },
   { name: "Сурогина Елена Юрьевна", position: "Заведующая по виду спорта" },
-  { name: "Дыкуха Лидия Игоревна", position: "Медицинская сестра" },
+  { name: "Дыкуха Лидия Николаевна", position: "Медицинская сестра" },
 ];
 
 export default function Staff() {
   return (
-    <section className="px-6 pb-20">
+    <section className="bg-slate-100 dark:bg-slate-950 px-6 py-20">
       <div className="max-w-6xl mx-auto">
         <motion.h2
-          className="text-primary-blue dark:text-white mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold text-center"
+          className="text-primary-blue dark:text-white mb-10 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold text-center"
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}

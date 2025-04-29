@@ -49,7 +49,7 @@ export default function CoachesPage() {
             <button
               key={coach.id}
               onClick={() => setSelectedCoach(coach)}
-              className="flex items-center space-x-4 bg-white dark:bg-slate-900 p-4 rounded-xl shadow-md hover:shadow-lg transition-all text-left"
+              className="group flex items-center space-x-4 bg-white dark:bg-slate-900 p-4 rounded-xl shadow-md hover:shadow-lg transition-all text-left"
             >
               <Image
                 src={coach.image}
@@ -60,7 +60,7 @@ export default function CoachesPage() {
               />
               <div>
                 <h4 className="text-lg font-semibold text-primary-blue dark:text-white">{coach.name}</h4>
-                <p className="text-slate-500 text-sm">{coach.sport}</p>
+                <p className="text-slate-500 text-sm group-hover:text-accent-red transition-colors">{coach.sport}</p>
                 <p className="text-slate-400 text-xs">Категория: {coach.category}</p>
                 <p className="text-slate-400 text-xs">Опыт: {coach.experience} лет</p>
               </div>

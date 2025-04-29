@@ -6,6 +6,7 @@ interface AnimatedDivProps {
   className?: string;
   delay?: number;
   scale?: boolean;
+  transition?: any;
 }
 
 const fadeInUp = {

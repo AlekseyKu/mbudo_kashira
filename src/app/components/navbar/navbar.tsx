@@ -112,6 +112,12 @@ export default function Navbar({navlight,tagline}:{navlight:any, tagline:any}) {
                                 НАШ БЛОГ
                             </Link>
                         </li>
+
+                        <li>
+                            <Link href="/documents" className={`sub-menu-item ${manu === '/documents' ? 'text-accent-red' : ''}`}>
+                                ДОКУМЕНТЫ
+                            </Link>
+                        </li>
                 
 
                         {/* <li className={`has-submenu parent-parent-menu-item ${['/features','/pricing','/instructors','/faqs','/blogs','/blog-sidebar','/blog-detail'].includes(manu) ? 'active' : ''}`}>

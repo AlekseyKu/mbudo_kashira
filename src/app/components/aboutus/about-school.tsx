@@ -30,12 +30,14 @@ export default function AboutSchool() {
     <section className="px-6 py-20">
       <div className="max-w-6xl mx-auto">
         {/* БЛОК 1: Описание и цели (во всю ширину) */}
-        <AnimatedDiv className="text-center mb-12" delay={0.4}>
-          <div className="relative">
+        <div className="text-center mb-12">
+          <AnimatedDiv className="relative" delay={0.4}>
             <p className="text-slate-600 dark:text-slate-300 text-lg max-w-5xl mx-auto mb-6">
               МБУДО «Спортивная школа «Кашира» — муниципальное учреждение, обеспечивающее качественную спортивную подготовку в Московской области и направленное на развитие массового спорта и подготовку молодых спортсменов к соревнованиям различного уровня.
             </p>
-            <blockquote className="relative italic text-lg text-accent-red max-w-sm mx-auto lg:mx-0 lg:ml-auto text-center lg:text-right">
+          </AnimatedDiv>
+          <AnimatedDiv className="relative" delay={1.2}>
+            <blockquote className="italic text-lg text-accent-red max-w-sm mx-auto lg:mx-0 lg:ml-auto text-center lg:text-right">
               <p>
                 "Мы воспитываем чемпионов и лидеров через спорт, дисциплину и вдохновение"
               </p>
@@ -43,36 +45,38 @@ export default function AboutSchool() {
                 — <cite> Гречишникова Ирина Геннадьевна, директор школы </cite>
               </footer>
             </blockquote>
-          </div>
+          </AnimatedDiv>
 
-          <div className="text-left mt-12">
-            <h3 className="text-primary-blue dark:text-white text-xl font-semibold mb-4">Цели и задачи учреждения</h3>
-            <ul className="text-slate-600 dark:text-slate-300 text-lg space-y-3 mx-auto">
-              <li>Развитие физической культуры и спорта на территории муниципалитета.</li>
-              <li className="font-semibold">Реализация программ спортивной подготовки на различных этапах:</li>
-              <ul className="pl-5 space-y-2">
-                <li className="relative before:content-['•'] before:absolute before:-left-4 before:text-primary-blue dark:before:text-accent-red">
-                  спортивно-оздоровительном;
-                </li>
-                <li className="relative before:content-['•'] before:absolute before:-left-4 before:text-primary-blue dark:before:text-accent-red">
-                  начальной подготовки;
-                </li>
-                <li className="relative before:content-['•'] before:absolute before:-left-4 before:text-primary-blue dark:before:text-accent-red">
-                  тренировочном (этап спортивной специализации);
-                </li>
-                <li className="relative before:content-['•'] before:absolute before:-left-4 before:text-primary-blue dark:before:text-accent-red">
-                  совершенствования спортивного мастерства;
-                </li>
-                <li className="relative before:content-['•'] before:absolute before:-left-4 before:text-primary-blue dark:before:text-accent-red">
-                  высшего спортивного мастерства.
-                </li>
+          <AnimatedDiv className="relative" delay={0.8}>
+            <div className="text-left mt-12">
+              <h3 className="text-primary-blue dark:text-white text-xl font-semibold mb-4">Цели и задачи учреждения</h3>
+              <ul className="text-slate-600 dark:text-slate-300 text-lg space-y-3 mx-auto">
+                <li>Развитие физической культуры и спорта на территории муниципалитета.</li>
+                <li className="font-semibold">Реализация программ спортивной подготовки на различных этапах:</li>
+                <ul className="pl-5 space-y-2">
+                  <li className="relative before:content-['•'] before:absolute before:-left-4 before:text-primary-blue dark:before:text-accent-red">
+                    спортивно-оздоровительном;
+                  </li>
+                  <li className="relative before:content-['•'] before:absolute before:-left-4 before:text-primary-blue dark:before:text-accent-red">
+                    начальной подготовки;
+                  </li>
+                  <li className="relative before:content-['•'] before:absolute before:-left-4 before:text-primary-blue dark:before:text-accent-red">
+                    тренировочном (этап спортивной специализации);
+                  </li>
+                  <li className="relative before:content-['•'] before:absolute before:-left-4 before:text-primary-blue dark:before:text-accent-red">
+                    совершенствования спортивного мастерства;
+                  </li>
+                  <li className="relative before:content-['•'] before:absolute before:-left-4 before:text-primary-blue dark:before:text-accent-red">
+                    высшего спортивного мастерства.
+                  </li>
+                </ul>
               </ul>
-            </ul>
-          </div>
-        </AnimatedDiv>
+            </div>
+          </AnimatedDiv>
+        </div>
 
         {/* БЛОК 2: Инфраструктура (фото слева, текст и кнопка справа) */}
-        <div className="flex flex-col lg:flex-row items-center gap-10 mb-12">
+        <div className="flex flex-col lg:flex-row items-center gap-10 mt-12">
           <AnimatedDiv className="lg:w-1/2" delay={0.4} scale>
             <Image
               src="/images/main/main.webp"
@@ -107,7 +111,7 @@ export default function AboutSchool() {
         </div>
 
         {/* БЛОК 3: Виды спорта с иконками */}
-        <AnimatedDiv className="text-center" delay={0.2}>
+        <AnimatedDiv className="text-center mt-12" delay={0.2}>
           <h3 className="text-left text-primary-blue dark:text-white text-xl font-semibold mb-4">Виды спорта</h3>
           <p className="text-left text-slate-600 dark:text-slate-300 text-lg mb-6 mx-auto">
             В «Спортивной школе «Кашира» развиваются 11 видов спорта:
