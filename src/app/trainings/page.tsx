@@ -42,7 +42,7 @@ export default function TrainingsPage() {
         <div className="absolute inset-0 bg-black/70"></div>
         <div className="container relative">
           <div className="grid grid-cols-1 text-center mt-10">
-            <AnimatedHead text="НАШИ ТРЕНЕРЫ" />
+            <AnimatedHead text="НАШИ ТРЕНЕРОВКИ" />
           </div>
         </div>
       </section>
