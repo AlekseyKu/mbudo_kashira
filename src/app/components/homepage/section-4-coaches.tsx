@@ -65,8 +65,8 @@
                     viewport={{ once: true }}
                 >
                     <div className="md:col-span-12 text-center">
-                        <Link href="/coaches" className="text-slate-400 hover:text-accent-red duration-500 ease-in-out">
-                            ВСЕ ТРЕНЕРЫ <i className="mdi mdi-arrow-right align-middle"></i>
+                        <Link href="/team" className="text-slate-400 hover:text-accent-red duration-500 ease-in-out">
+                            НАШ КОЛЛЕКТИВ <i className="mdi mdi-arrow-right align-middle"></i>
                         </Link>
                     </div>
                 </motion.div>
