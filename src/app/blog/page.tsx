@@ -80,7 +80,7 @@ export default function BlogsPage() {
               href="https://vk.com/public177031794"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 text-sm font-medium border border-primary-blue text-primary-blue bg-transparent hover:bg-primary-blue hover:text-white rounded-md transition"
+              className="inline-block px-6 py-3 text-sm font-medium border border-primary-blue text-primary-blue bg-transparent hover:bg-primary-blue hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-primary-blue rounded-md transition"
             >
               Перейти в VK
             </a>

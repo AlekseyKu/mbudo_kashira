@@ -1,6 +1,7 @@
-// src\app\page.tsx
-import React from 'react'
-import { useMemo } from 'react'
+'use client'
+
+import React, { useMemo } from 'react'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -13,7 +14,6 @@ import CoursesTwo from './components/courses/courses-two'
 import Client from './components/client'
 import Faq from './components/faq'
 import FaqAbout from './components/faq-about'
-
 import Blog from './components/blog'
 import Footer from './components/footer'
 import ScrollToTop from './components/scroll-to-top'
@@ -34,76 +34,44 @@ import CoachSection from './components/homepage/section-4-coaches'
 import BlogSection from './components/homepage/section-5-blog'
 import FAQSection from './components/homepage/section-6-faq'
 
-
-interface CoachesData{
-    id: number;
-    name: string;
-    sport: string;
-    category: string;
-    experience: number;    
-}
-
-interface TrainingsData{
-    id: number;
-    image: string;
-    title: string;
-    desc: string;
-}
-
-interface CounterData{
-    value: number;
-    symbol: string;
-    title: string;
-}
-
-interface CoursesData{
-    id: number;
-    image: string;
-    tag1: string;
-    tag2: string;
-    amount: number;
-    lessons: number;
-    students: number;
-    title: string;
-    desc: string;
-    user: string;
-    name: string;
-}
-
 export default function Page() {
     const shuffledCoaches = useMemo(() => {
-        return coachesData
-          .sort(() => Math.random() - 0.5) // перемешка
-          .slice(0, 8)                     // только 8
-      }, [])
+        return coachesData.sort(() => Math.random() - 0.5).slice(0, 8)
+    }, [])
+
     return (
         <>
-            {/* <Tagline/> */}
-            <Navbar tagline={false} navlight={false}/>
+            {/* АНИМИРОВАННЫЙ ХЕДЕР */}
+            <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.5 }}
+            >
+                <Navbar tagline={false} navlight={false} />
+            </motion.div>
 
             {/* MAIN */}
-            <HeroSection/>
+            <HeroSection />
 
             {/* BLOCK LINE INFO */}
-            <InfoLineSection/>
+            <InfoLineSection />
 
             {/* BLOCK ТРЕНИРОВКИ */}
-            <TrainingSection/>
+            <TrainingSection />
 
             {/* BLOCK ТРЕНЕРЫ */}
-            <CoachSection/>
+            <CoachSection />
 
             {/* BLOCK БЛОГ */}
-            <BlogSection/> 
-                
+            <BlogSection />
+
             {/* BLOCK FAQ */}
-            <FAQSection/>
+            <FAQSection />
 
             {/* BLOCK CTA */}
-
-            <Footer/>
-            <ScrollToTop/>
-            <Switcher/>
+            <Footer />
+            <ScrollToTop />
+            <Switcher />
         </>
     )
 }

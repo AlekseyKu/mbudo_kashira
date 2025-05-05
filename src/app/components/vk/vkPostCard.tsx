@@ -65,7 +65,7 @@ export default function VkPostCard({
           {onOpen ? (
             <button
               onClick={() => onOpen(post)}
-              className="mt-4 text-sm font-medium border border-primary-blue text-primary-blue bg-transparent hover:bg-primary-blue hover:text-white px-4 py-2 rounded-md transition"
+              className="mt-4 text-sm font-medium border border-primary-blue text-primary-blue bg-transparent hover:bg-primary-blue hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-primary-blue px-4 py-2 rounded-md transition"
             >
               Открыть
             </button>
@@ -73,7 +73,7 @@ export default function VkPostCard({
             <Link
               href={`https://vk.com/wall${post.owner_id}_${post.id}`}
               target="_blank"
-              className="mt-4 text-sm font-medium border border-primary-blue text-primary-blue bg-transparent hover:bg-primary-blue hover:text-white px-4 py-2 rounded-md transition text-center"
+              className="mt-4 text-sm font-medium border border-primary-blue text-primary-blue bg-transparent hover:bg-primary-blue hover:text-white dark:hover:bg-white dark:hover:text-primary-blue px-4 py-2 rounded-md transition text-center"
             >
               Читать
             </Link>
@@ -87,7 +87,7 @@ export default function VkPostCard({
           {onOpen ? (
             <button
               onClick={() => onOpen(post)}
-              className="mt-4 w-full text-sm font-medium border border-primary-blue text-primary-blue bg-transparent hover:bg-primary-blue hover:text-white px-4 py-2 rounded-md transition"
+              className="mt-4 w-full text-sm font-medium border border-primary-blue text-primary-blue bg-transparent hover:bg-primary-blue hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-primary-blue px-4 py-2 rounded-md transition"
             >
               Открыть
             </button>
@@ -95,7 +95,7 @@ export default function VkPostCard({
             <Link
               href={`https://vk.com/wall${post.owner_id}_${post.id}`}
               target="_blank"
-              className="mt-4 w-full text-sm font-medium border border-primary-blue text-primary-blue bg-transparent hover:bg-primary-blue hover:text-white px-4 py-2 rounded-md transition text-center inline-block"
+              className="mt-4 w-full text-sm font-medium border border-primary-blue text-primary-blue bg-transparent hover:bg-primary-blue hover:text-white dark:hover:bg-white dark:hover:text-primary-blue px-4 py-2 rounded-md transition text-center inline-block"
             >
               Читать
             </Link>

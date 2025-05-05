@@ -1,3 +1,4 @@
+// src\app\components\navbar\navbar.tsx
 'use client'
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -38,12 +39,14 @@ export default function Navbar({navlight,tagline}:{navlight:any, tagline:any}) {
     <>
         <nav id="topnav" className={`defaultscroll is-sticky ${scroll ? 'nav-sticky' : ''} ${tagline ? 'tagline-height' : ''}`}>
             <div className="container relative">
+                
                 {!navlight && 
                     <Link className="logo" href="/">
                         <Image src='/images/logo_h.png' width={300} height={75} className="inline-block dark:hidden" alt=""/>
                         <Image src='/images/logo_h_dark.png' width={300} height={75} className="hidden dark:inline-block" alt=""/>
                     </Link>
                 }
+
                 {navlight && 
                     <Link className="logo" href="/">
                         <span className="inline-block dark:hidden">
