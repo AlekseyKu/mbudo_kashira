@@ -1,7 +1,8 @@
+// src\app\components\footer.tsx
 import React from 'react'
 import Link from 'next/link'
 
-import { FiChevronRight, FiMapPin, FiPhoneCall } from 'react-icons/fi'
+import { FiChevronRight, FiMapPin, FiPhoneCall, FiMail } from 'react-icons/fi'
 import { IconType } from 'react-icons'
 
 import { footerLink1, footerLink2, footerSocial } from '../data'
@@ -53,6 +54,14 @@ export default function Footer() {
                                             <a href="tel:+152534-468-854" className="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">8 496-696-7689</a>
                                         </div>
                                     </div>
+
+                                    <div className="flex mt-4">
+                                        <FiMail className="align-middle text-2xl text-accent-red me-2" />
+                                        <div className="">
+                                            <a href="mailto:dush-kashira@yandex.ru" className="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">dush-kashira@yandex.ru</a>
+                                        </div>
+                                    </div>
+
                                 </div>
                         
                                 <div className="lg:col-span-3 md:col-span-3">

@@ -76,15 +76,49 @@ export default function Navbar({navlight,tagline}:{navlight:any, tagline:any}) {
                             </Link>
                         </li>
 
-                        <li>
-                            <Link href="/aboutus" className={`sub-menu-item ${manu === '/aboutus' ? 'text-accent-red' : ''}`}>
+
+                        {/* === О НАС === */}
+                        <li className={`has-submenu parent-parent-menu-item ${['/aboutus', '/team', '/objects', '/vacancies'].includes(manu) ? 'active' : ''}`}>
+                            <Link
+                                href="#"
+                                onClick={() => setSubManu(subManu === '/cours-item' ? '' : '/cours-item')}
+                                className={`${['/aboutus', '/team', '/objects', '/vacancies'].includes(manu) ? 'text-accent-red' : ''}`}
+                            >
                                 О НАС
                             </Link>
+                            <span className="menu-arrow"></span>
+                            <ul className={`submenu ${['/cours-item'].includes(subManu) ? 'open' : ''}`}>
+                                <li>
+                                    <Link href="/aboutus" className={`sub-menu-item ${manu === '/aboutus' ? 'text-accent-red' : ''}`}>
+                                        О ШКОЛЕ
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/team" className={`sub-menu-item ${manu === '/team' ? 'text-accent-red' : ''}`}>
+                                        КОЛЛЕКТИВ
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/objects" className={`sub-menu-item ${manu === '/objects' ? 'text-accent-red' : ''}`}>
+                                        ОБЪЕКТЫ
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/vacancies" className={`sub-menu-item ${manu === '/vacancies' ? 'text-accent-red' : ''}`}>
+                                        ВАКАНСИИ
+                                    </Link>
+                                </li>
+                            </ul>
                         </li>
 
 
                         {/* === ТРЕНИРОВКИ === */}
-                        <li className={`has-submenu parent-parent-menu-item ${['/trainings', '/coaches'].includes(manu) ? 'active' : ''}`}>
+                        <li>
+                            <Link href="/trainings" className={`sub-menu-item ${manu === '/trainings' ? 'text-accent-red' : ''}`}>
+                                ТРЕНИРОВКИ
+                            </Link>
+                        </li>
+                        {/* <li className={`has-submenu parent-parent-menu-item ${['/trainings', '/coaches'].includes(manu) ? 'active' : ''}`}>
                             <Link
                                 href="#"
                                 onClick={() => setSubManu(subManu === '/cours-item' ? '' : '/cours-item')}
@@ -96,7 +130,7 @@ export default function Navbar({navlight,tagline}:{navlight:any, tagline:any}) {
                             <ul className={`submenu ${['/cours-item'].includes(subManu) ? 'open' : ''}`}>
                                 <li>
                                     <Link href="/trainings" className={`sub-menu-item ${manu === '/trainings' ? 'text-accent-red' : ''}`}>
-                                        НАШИ ТРЕНИРОВКИ
+                                        ТРЕНИРОВКИ
                                     </Link>
                                 </li>
                                 <li>
@@ -104,12 +138,17 @@ export default function Navbar({navlight,tagline}:{navlight:any, tagline:any}) {
                                         НАШИ ТРЕНЕРЫ
                                     </Link>
                                 </li>
+                                <li>
+                                    <Link href="/vacancies" className={`sub-menu-item ${manu === '/vacancies' ? 'text-accent-red' : ''}`}>
+                                        ВАКАНСИИ
+                                    </Link>
+                                </li>
                             </ul>
-                        </li>
+                        </li> */}
 
                         <li>
                             <Link href="/blog" className={`sub-menu-item ${manu === '/blog' ? 'text-accent-red' : ''}`}>
-                                НАШ БЛОГ
+                                БЛОГ
                             </Link>
                         </li>
 

@@ -46,6 +46,7 @@ export default function Coaches() {
           whileInView="animate"
           viewport={{ once: true }}
           variants={fadeInUp}
+          transition={{ duration: 0.7, ease: "easeOut" }}
         >
           Тренерский состав
         </motion.h2>

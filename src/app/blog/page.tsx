@@ -7,6 +7,8 @@ import ScrollToTop from '../components/scroll-to-top'
 import Switcher from '../components/switcher'
 import VkPostCard, { VKPost } from '../components/vk/vkPostCard'
 import VkPostModal from '../components/vk/vkPostModal'
+import AnimatedHead from '../components/animated-head'
+import AnimatedDiv from '../components/animated-div'
 
 export default function BlogsPage() {
   const [posts, setPosts] = useState<VKPost[]>([])
@@ -33,17 +35,14 @@ export default function BlogsPage() {
     <>
       <Navbar navlight={true} tagline={false} />
 
-      <section
-        className="relative table w-full py-32 lg:py-30 bg-no-repeat bg-top bg-cover"
-        style={{ backgroundImage: `url('/images/sport/сollages-2.webp')` }}
-      >
-        <div className="absolute inset-0 bg-black opacity-80" />
-        <div className="container relative text-center">
-          <h3 className="md:text-3xl text-2xl font-semibold text-white mt-10">
-            НАШ БЛОГ
-          </h3>
-        </div>
-      </section>
+      <section className="relative w-full py-24 bg-cover bg-center bg-no-repeat" style={{backgroundImage:`url('/images/sport/сollages-2.webp')`}}>
+          <div className="absolute inset-0 bg-black/70"></div>
+          <div className="container relative">
+            <div className="grid grid-cols-1 text-center mt-10">
+              <AnimatedHead text="НАШ БЛОГ" />
+            </div>
+          </div>
+        </section>
 
       <div className="relative">
         <div className="shape overflow-hidden z-1 text-white dark:text-slate-900">
@@ -63,27 +62,30 @@ export default function BlogsPage() {
               Ошибка при загрузке постов: {error}
             </div>
           )}
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {posts.slice(0, visibleCount).map((post) => (
-              <VkPostCard
-                key={post.id}
-                post={post}
-                onOpen={setSelectedPost}
-              />
+            {posts.slice(0, visibleCount).map((post, i) => (
+              <AnimatedDiv  transition={{ delay: 0.15 * i }}>
+                <VkPostCard
+                  key={post.id}
+                  post={post}
+                  onOpen={setSelectedPost}
+                />
+              </AnimatedDiv>
+
             ))}
           </div>
 
-          {visibleCount < posts.length && (
-            <div className="text-center mt-8">
-              <button
-                onClick={() => setVisibleCount((prev) => prev + 9)}
-                className="px-6 py-3 text-sm font-medium border border-primary-blue text-primary-blue bg-transparent hover:bg-primary-blue hover:text-white rounded-md transition"
-              >
-                Показать ещё
-              </button>
-            </div>
-          )}
+          <div className="text-center mt-8">
+            <a
+              href="https://vk.com/public177031794"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-6 py-3 text-sm font-medium border border-primary-blue text-primary-blue bg-transparent hover:bg-primary-blue hover:text-white rounded-md transition"
+            >
+              Перейти в VK
+            </a>
+          </div>
+
         </div>
       </section>
 

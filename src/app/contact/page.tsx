@@ -1,171 +1,126 @@
-// src\app\contact\page.tsx
 'use client'
 
-import React, { useEffect, useRef, useState, useCallback } from 'react'
-import Script from 'next/script'
+import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { FiMapPin, FiPhoneCall, FiMail } from 'react-icons/fi'
+import { FaVk } from 'react-icons/fa'
 import Navbar from '../components/navbar/navbar'
-import Footer from '../components/footer'
 import ScrollToTop from '../components/scroll-to-top'
 import Switcher from '../components/switcher'
 
-const locations = [
-  // Формат координат: [долгота, широта]
-  { id: 1, name: 'ФОК "Олимп"', coords: [38.189717, 54.842417], address: 'г. Кашира, ул. Металлургов д. 7 стр. 2' },
-  { id: 2, name: 'Стадион "Спартак"', coords: [38.158904, 54.835062], address: 'г. Кашира, ул. Карла Маркса д. 29' },
-  { id: 3, name: 'Стадион "Локомотив"', coords: [38.190483, 54.853142], address: 'г. Кашира, ул. Интернациональная' }, // Уточнить адрес
-  { id: 4, name: 'Спортзал "Юность"', coords: [38.241861, 54.847511], address: 'г. Кашира, ул. Новокаширская д.4' },
-  { id: 5, name: 'Шахматный клуб', coords: [38.241228, 54.843771], address: 'г. Кашира, ул. 8 марта д. 35а' },
-]
-
 export default function ContactsPage() {
-  const mapRef = useRef<HTMLDivElement>(null)
-  const mapInstance = useRef<any>(null)
-  const markersRef = useRef<any[]>([])
-  const [selected, setSelected] = useState(locations[0])
-
-  // Флаг загрузки карты
-  const [isMapLoaded, setIsMapLoaded] = useState(false)
-
-  // Функция для создания/обновления маркеров
-  const updateMarkers = useCallback(() => {
-    if (!mapInstance.current || !window.ymaps3) return
-
-    const { YMapMarker } = window.ymaps3
-
-    // Очищаем существующие маркеры
-    markersRef.current.forEach(marker => mapInstance.current.removeChild(marker))
-    markersRef.current = []
-
-    // Создаем новые маркеры
-    locations.forEach(loc => {
-      const isSelected = loc.id === selected.id
-      const content = document.createElement('div')
-      content.innerHTML = `
-        <div class="marker" style="
-          padding: 6px 12px;
-          background: ${isSelected ? '#dc2626' : '#ffffff'};
-          border-radius: 8px;
-          font-size: 14px;
-          font-weight: 500;
-          color: ${isSelected ? '#ffffff' : '#1f2937'};
-          border: 2px solid ${isSelected ? '#ffffff' : '#e5e7eb'};
-          box-shadow: ${isSelected ? '0 4px 12px rgba(220, 38, 38, 0.5)' : '0 2px 4px rgba(0, 0, 0, 0.1)'};
-          transform: ${isSelected ? 'scale(1.1)' : 'scale(1)'};
-          transition: all 0.2s ease;
-          text-align: center;
-        ">
-          ${loc.name}
-        </div>
-      `
-
-      const marker = new YMapMarker({ coordinates: loc.coords }, content)
-      mapInstance.current.addChild(marker)
-      markersRef.current.push(marker)
-    })
-  }, [selected])
-
-  // Запускаем перемещение к новой локации
-  useEffect(() => {
-    if (mapInstance.current) {
-      mapInstance.current.setLocation({
-        center: selected.coords, // [долгота, широта]
-        zoom: 15,
-        duration: 600,
-      })
-      updateMarkers()
-    }
-  }, [selected, updateMarkers])
-
-  // Инициализация карты после загрузки скрипта
-  const handleMapScriptLoad = async () => {
-    if (!window.ymaps3 || mapInstance.current) return
-
-    await window.ymaps3.ready
-    const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer } = window.ymaps3
-
-    const map = new YMap(mapRef.current!, {
-      location: {
-        center: selected.coords,
-        zoom: 14,
-      },
-      // behaviors: ['drag', 'pinchZoom'], // Отключаем scrollZoom
-    })
-    mapInstance.current = map
-    map.addChild(new YMapDefaultSchemeLayer())
-    map.addChild(new YMapDefaultFeaturesLayer())
-
-
-    updateMarkers()
-    setIsMapLoaded(true)
-  }
-
   return (
     <>
-      <Script
-        src={`https://api-maps.yandex.ru/v3/?apikey=${process.env.NEXT_PUBLIC_YANDEX_MAPS_API_KEY}&lang=ru_RU`}
-        strategy="afterInteractive"
-        referrerPolicy="origin"
-        onLoad={handleMapScriptLoad}
-        // strategy="beforeInteractive"
-      />
-
       <Navbar navlight={true} tagline={false} />
 
-      <section className="relative table w-full py-32 lg:py-30 bg-no-repeat bg-top bg-cover" style={{backgroundImage:`url('/images/main/1.webp')`}}>
-        <div className="absolute inset-0 bg-black opacity-80"></div>
+      {/* Хедер */}
+      <section
+        className="relative w-full py-32 bg-cover bg-top bg-no-repeat"
+        style={{ backgroundImage: `url('/images/main/1.webp')` }}
+      >
+        <div className="absolute inset-0 bg-black/70"></div>
         <div className="container relative">
           <div className="grid grid-cols-1 text-center mt-10">
-            <h3 className="md:text-3xl text-2xl md:leading-normal leading-normal font-semibold text-white">КОНТАКТЫ</h3>
+            <h3 className="md:text-3xl text-2xl md:leading-normal leading-normal font-semibold text-white">
+              КОНТАКТЫ
+            </h3>
           </div>
         </div>
       </section>
 
+      {/* Переход */}
       <div className="relative">
         <div className="shape overflow-hidden z-1 text-white dark:text-slate-900">
           <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+            <path
+              d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z"
+              fill="currentColor"
+            ></path>
           </svg>
         </div>
       </div>
 
-      <div className="relative container mx-auto py-12 px-4">
-        <div className="grid lg:grid-cols-3 gap-6">
-          <div className="lg:col-span-2">
-            <div className="w-full h-[600px] rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800">
-              <div className="w-full h-full relative">
-                {/* Оверлей с текстом пока карта не готова */}
-                {!isMapLoaded && (
-                  <div className="absolute inset-0 z-10 flex items-center justify-center bg-white/90">
-                    <span className="text-lg font-medium">Карта загружается…</span>
-                  </div>
-                )}
-                <div ref={mapRef} className="w-full h-full" />
-                </div>
-              </div>
+      {/* Контакты */}
+      <section className="container mx-auto px-4 py-16">
+        <div className="max-w-5xl mx-auto bg-white dark:bg-slate-900 p-8 rounded-xl shadow-lg grid md:grid-cols-2 gap-10 items-center">
+          
+          {/* Левая колонка: Контакты */}
+          <div>
+            <h2 className="text-2xl font-bold text-primary-blue dark:text-white mb-6">
+              Контактная информация
+            </h2>
+
+            <div className="flex items-start space-x-4 mb-4">
+              <FiMapPin className="text-2xl text-accent-red shrink-0 mt-1" />
+              <p className="text-slate-700 dark:text-slate-300">
+                Московская область, г. Кашира, ул. Металлургов, дом 7, корпус 2
+              </p>
             </div>
-          <div className="lg:col-span-1">
-            <h2 className="text-2xl font-bold text-center text-primary-blue dark:text-white mb-6">Наши объекты</h2>
-            <div className="space-y-4">
-              {locations.map(loc => (
-                <div
-                  key={loc.id}
-                  onClick={() => setSelected(loc)}
-                  className={`p-4 rounded-xl cursor-pointer shadow-md transition-all duration-300 hover:shadow-lg ${
-                    selected.id === loc.id
-                      ? 'bg-primary-blue/10 border-l-4 text-accent-red border-accent-red'
-                      : 'bg-white dark:bg-slate-800'
-                  }`}
-                >
-                  <h4 className="text-lg font-semibold border-primary-blue">{loc.name}</h4>
-                  <p className="text-slate-500 text-sm mt-1">{loc.address}</p>
-                </div>
-              ))}
+
+            <div className="flex items-start space-x-4 mb-4">
+              <FiPhoneCall className="text-2xl text-accent-red shrink-0 mt-1" />
+              <a
+                href="tel:+74966967689"
+                className="text-slate-700 dark:text-slate-300 hover:text-accent-red transition"
+              >
+                8 (496) 696-76-89
+              </a>
+            </div>
+
+            <div className="flex items-start space-x-4 mb-4">
+              <FiMail className="text-2xl text-accent-red shrink-0 mt-1" />
+              <a
+                href="mailto:dush-kashira@yandex.ru"
+                className="text-slate-700 dark:text-slate-300 hover:text-accent-red transition"
+              >
+                dush-kashira@yandex.ru
+              </a>
+            </div>
+
+            <div className="mt-6">
+              <p className="text-sm text-slate-500 dark:text-slate-400 mb-2">Мы в VK:</p>
+              <Link
+                href="https://vk.com/public177031794"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-primary-blue dark:text-white hover:text-accent-red dark:hover:text-accent-red transition text-base"
+              >
+                <FaVk className="text-xl" />
+                Перейти в группу
+              </Link>
             </div>
           </div>
-        </div>
-      </div>
 
-      <Footer />
+          {/* Правая колонка: QR-код */}
+          <div className="flex flex-col items-center justify-center pt-10">
+            {/* <p className="text-sm text-slate-500 mb-3 dark:text-slate-400">Наш QR-код:</p> */}
+            <Image
+              src="/images/qr-white.webp"
+              alt="QR Code"
+              width={250}
+              height={250}
+              className="block dark:hidden rounded-lg shadow-md"
+            />
+            <Image
+              src="/images/qr-black.webp"
+              alt="QR Code"
+              width={250}
+              height={250}
+              className="hidden dark:block rounded-lg shadow-md"
+            />
+          </div>
+        </div>
+      </section>
+
+
+      {/* Подпись */}
+      <footer className="py-6 border-t border-gray-200 dark:border-slate-700 text-center">
+        <p className="text-gray-500 dark:text-gray-400 text-sm">
+          2025 © МБУДО Cпортивная школа «Кашира»
+        </p>
+      </footer>
+
       <ScrollToTop />
       <Switcher />
     </>

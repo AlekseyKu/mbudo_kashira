@@ -31,12 +31,12 @@ export default function AboutSchool() {
       <div className="max-w-6xl mx-auto">
         {/* БЛОК 1: Описание и цели (во всю ширину) */}
         <div className="text-center mb-12">
-          <AnimatedDiv className="relative" delay={0.4}>
+          <AnimatedDiv className="relative" transition={{ delay: 0.4 }}>
             <p className="text-slate-600 dark:text-slate-300 text-lg max-w-5xl mx-auto mb-6">
               МБУДО «Спортивная школа «Кашира» — муниципальное учреждение, обеспечивающее качественную спортивную подготовку в Московской области и направленное на развитие массового спорта и подготовку молодых спортсменов к соревнованиям различного уровня.
             </p>
           </AnimatedDiv>
-          <AnimatedDiv className="relative" delay={1.2}>
+          <AnimatedDiv className="relative" transition={{ delay: 1.2 }}>
             <blockquote className="italic text-lg text-accent-red max-w-sm mx-auto lg:mx-0 lg:ml-auto text-center lg:text-right">
               <p>
                 "Мы воспитываем чемпионов и лидеров через спорт, дисциплину и вдохновение"
@@ -47,7 +47,7 @@ export default function AboutSchool() {
             </blockquote>
           </AnimatedDiv>
 
-          <AnimatedDiv className="relative" delay={0.8}>
+          <AnimatedDiv className="relative" transition={{ delay: 0.8 }}>
             <div className="text-left mt-12">
               <h3 className="text-primary-blue dark:text-white text-xl font-semibold mb-4">Цели и задачи учреждения</h3>
               <ul className="text-slate-600 dark:text-slate-300 text-lg space-y-3 mx-auto">
@@ -77,7 +77,7 @@ export default function AboutSchool() {
 
         {/* БЛОК 2: Инфраструктура (фото слева, текст и кнопка справа) */}
         <div className="flex flex-col lg:flex-row items-center gap-10 mt-12">
-          <AnimatedDiv className="lg:w-1/2" delay={0.4} scale>
+          <AnimatedDiv className="lg:w-1/2" transition={{ delay: 0.4 }} scale>
             <Image
               src="/images/main/main.webp"
               alt="Спортивная школа Кашира"
@@ -86,7 +86,7 @@ export default function AboutSchool() {
               className="rounded-xl object-cover shadow-lg"
             />
           </AnimatedDiv>
-          <AnimatedDiv className="lg:w-3/5 text-center lg:text-right" delay={0.6}>
+          <AnimatedDiv className="lg:w-3/5 text-center lg:text-right" transition={{ delay: 0.6 }}>
             <h3 className="text-primary-blue dark:text-white text-xl font-semibold mb-4">Инфраструктура</h3>
             <p className="text-slate-600 dark:text-slate-300 text-lg mb-4">
               Школа располагает пятью современными спортивными объектами:
@@ -111,7 +111,7 @@ export default function AboutSchool() {
         </div>
 
         {/* БЛОК 3: Виды спорта с иконками */}
-        <AnimatedDiv className="text-center mt-12" delay={0.2}>
+        <AnimatedDiv className="text-center mt-12" transition={{ delay: 0.2 }}>
           <h3 className="text-left text-primary-blue dark:text-white text-xl font-semibold mb-4">Виды спорта</h3>
           <p className="text-left text-slate-600 dark:text-slate-300 text-lg mb-6 mx-auto">
             В «Спортивной школе «Кашира» развиваются 11 видов спорта:
@@ -121,7 +121,7 @@ export default function AboutSchool() {
               <AnimatedDiv
                 key={i}
                 className="flex items-center gap-3 text-slate-600 dark:text-slate-300 text-lg"
-                delay={0.1 * i}
+                transition={{ delay: 0.15 * i }}
               >
                 <Image
                   src={sport.icon}

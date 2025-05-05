@@ -1,3 +1,4 @@
+// src\app\documents\page.tsx
 "use client";
 
 import React from "react";
@@ -7,7 +8,7 @@ import Footer from "../components/footer";
 import ScrollToTop from "../components/scroll-to-top";
 import Switcher from "../components/switcher";
 import AnimatedDiv from "../components/animated-div";
-// import test from "../../../"
+import AnimatedHead from "../components/animated-head";
 
 // Пример списка документов
 const documents = [
@@ -29,34 +30,33 @@ export default function DocumentsPage() {
       <Navbar navlight={true} tagline={false} />
 
       <main className="bg-white text-primary-blue dark:bg-black dark:text-white">
-        {/* HERO */}
-        <section
-          className="relative w-full py-28 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/sport/сollage.webp')" }}
-        >
+
+        <section className="relative w-full py-24 bg-cover bg-center bg-no-repeat" style={{backgroundImage:`url('/images/sport/сollage.webp')`}}>
           <div className="absolute inset-0 bg-black/70"></div>
-          <div className="relative z-1 container text-center">
-            <AnimatedDiv
-              className="md:text-3xl text-2xl font-semibold text-white mt-10 mb-4"
-              transition={{ duration: 0.7, ease: "easeOut" }}
-            >
-              <h1>Документы</h1>
-            </AnimatedDiv>
+          <div className="container relative">
+            <div className="grid grid-cols-1 text-center mt-10">
+              <AnimatedHead text="ДОКУМЕНТЫ" />
+            </div>
           </div>
         </section>
 
+        <div className="relative">
+          <div className="shape overflow-hidden z-1 text-white dark:text-slate-900">
+            <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+            </svg>
+          </div>
+        </div>
+
         {/* ДОКУМЕНТЫ */}
-        <section className="px-6 py-20">
-          <div className="max-w-6xl mx-auto">
-            {/* <AnimatedDiv className="text-3xl md:text-4xl font-semibold text-center mb-10">
-              <h2>Официальные документы</h2>
-            </AnimatedDiv> */}
+        <section className="container mx-auto px-4 py-12">
+          <div className="container relative">
             <div className="grid md:grid-cols-2 gap-6">
               {documents.map((doc, i) => (
                 <AnimatedDiv
                   key={i}
                   className="flex items-center gap-4 bg-white dark:bg-slate-800 rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow"
-                  delay={i * 0.1}
+                  transition={{ delay: i * 0.1 }}
                 >
                   <svg
                     className="w-8 h-8 text-primary-blue dark:text-accent-red"

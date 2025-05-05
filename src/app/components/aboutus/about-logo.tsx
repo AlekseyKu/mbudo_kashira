@@ -14,7 +14,7 @@ export default function LogoSection() {
           <AnimatedDiv
             className="lg:w-1/5 flex justify-start"
             scale
-            delay={0.6}
+            transition={{ delay: 0.6 }}
           >
             <Image
               src="/images/gerb.webp"
@@ -26,7 +26,7 @@ export default function LogoSection() {
           </AnimatedDiv>
           <AnimatedDiv
             className="lg:w-3/5 text-center"
-            delay={0.4}
+            transition={{ delay: 0.4 }}
           >
             <p className="text-lg mb-4">
               Мы вдохновились символом города Каширы — черным драконом, который олицетворяет силу, защиту и историю города.
@@ -38,7 +38,7 @@ export default function LogoSection() {
           <AnimatedDiv
             className="lg:w-1/5 flex justify-end"
             scale
-            delay={0.2}
+            transition={{ delay: 0.2 }}
           >
             <Image
               src="/images/logo_main_min.webp"
