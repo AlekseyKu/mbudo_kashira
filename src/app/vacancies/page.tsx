@@ -11,8 +11,8 @@ import AnimatedHead from "../components/animated-head";
 
 interface Vacancy {
   Вакансия: string;
-  Объект: string;
-  "З/п": string;
+  // Объект: string;
+  // "З/п": string;
 }
 
 export default function VacanciesPage() {
@@ -41,7 +41,7 @@ export default function VacanciesPage() {
 
         {/* ТАБЛИЦА ВАКАНСИЙ */}
         <section className="px-6 py-20">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <AnimatedDiv
               className="text-center mb-10"
               transition={{ duration: 0.7, delay: 0.2 }}
@@ -56,8 +56,8 @@ export default function VacanciesPage() {
                   <thead>
                     <tr className="bg-primary-blue dark:bg-accent-red text-white">
                       <th className="p-4 font-semibold">Вакансия</th>
-                      <th className="p-4 font-semibold">Объект</th>
-                      <th className="p-4 font-semibold">З/п</th>
+                      {/* <th className="p-4 font-semibold">Объект</th>
+                      <th className="p-4 font-semibold">З/п</th> */}
                     </tr>
                   </thead>
                   <tbody>
@@ -67,14 +67,27 @@ export default function VacanciesPage() {
                         className="border-b border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-900"
                       >
                         <td className="p-4">{vacancy.Вакансия}</td>
-                        <td className="p-4">{vacancy.Объект}</td>
-                        <td className="p-4">{vacancy["З/п"]}</td>
+                        {/* <td className="p-4">{vacancy.Объект}</td>
+                        <td className="p-4">{vacancy["З/п"]}</td> */}
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
             </AnimatedDiv>
+
+            <AnimatedDiv
+              className="mt-10 text-center"
+              transition={{ duration: 0.7, delay: 0.6 }}
+            >
+              <a
+                href="/contact"
+                className="inline-block px-6 py-3 text-sm font-medium border border-primary-blue text-primary-blue bg-transparent hover:bg-primary-blue hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-primary-blue rounded-md transition"
+              >
+                Связаться с нами
+              </a>
+            </AnimatedDiv>
+
           </div>
         </section>
       </main>
