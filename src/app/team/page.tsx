@@ -56,9 +56,6 @@ export default function CoachesPage() {
 
       {/* РУКОВОДСТВО И ПЕРСОНАЛ */}
       <section className="container mx-auto px-4 py-10">
-        {/* <div className="text-center mb-6">
-          <AnimatedHead text="РУКОВОДСТВО И ПЕРСОНАЛ" />
-        </div> */}
 
         <motion.h2
           className="text-primary-blue dark:text-white mb-10 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold text-center"
@@ -101,9 +98,6 @@ export default function CoachesPage() {
 
       {/* НАШИ ТРЕНЕРЫ */}
       <section className="container mx-auto px-4 py-10">
-        {/* <div className="text-center">
-          <AnimatedHead text="НАШИ ТРЕНЕРЫ" />
-        </div> */}
 
         <motion.h2
           className="text-primary-blue dark:text-white mb-10 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold text-center"
