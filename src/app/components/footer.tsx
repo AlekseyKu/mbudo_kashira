@@ -3,6 +3,7 @@ import React from 'react'
 import Link from 'next/link'
 
 import { FiChevronRight, FiMapPin, FiPhoneCall, FiMail } from 'react-icons/fi'
+import { FaVk } from 'react-icons/fa'
 import { IconType } from 'react-icons'
 
 import { footerLink1, footerLink2, footerSocial } from '../data'
@@ -51,16 +52,33 @@ export default function Footer() {
                                     <div className="flex mt-4">
                                         <FiPhoneCall className="iconoir-phone align-middle text-2xl text-accent-red me-2"/>
                                         <div className="">
-                                            <a href="tel:+152534-468-854" className="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">8 496-696-7689</a>
+                                            <a href="tel:+152534-468-854" className="text-gray-300 hover:text-accent-red dark:hover:text-accent-red duration-500 ease-in-out">8 496-696-7689</a>
                                         </div>
                                     </div>
 
                                     <div className="flex mt-4">
                                         <FiMail className="align-middle text-2xl text-accent-red me-2" />
                                         <div className="">
-                                            <a href="mailto:dush-kashira@yandex.ru" className="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">dush-kashira@yandex.ru</a>
+                                            <a href="mailto:dush-kashira@yandex.ru" className="text-gray-300 hover:text-accent-red dark:hover:text-accent-red duration-500 ease-in-out">dush-kashira@yandex.ru</a>
                                         </div>
                                     </div>
+
+                                    <div className="flex mt-4">
+                                        <FaVk className="align-middle text-2xl text-accent-red me-2" />
+                                        <div className="">
+                                            <a href="https://vk.com/public177031794" target="_blank" className="text-gray-300 hover:text-accent-red dark:hover:text-accent-red duration-500 ease-in-out">Мы ВКонтакте</a>
+                                        </div>
+                                    </div>
+
+                                    {/* <Link
+                                        href="https://vk.com/public177031794"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 text-primary-blue dark:text-white hover:text-accent-red dark:hover:text-accent-red transition text-base"
+                                    >
+                                        <FaVk className="text-xl" />
+                                        Перейти в группу
+                                    </Link> */}
 
                                 </div>
                         
