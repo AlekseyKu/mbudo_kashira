@@ -1,7 +1,7 @@
 // src\app\page.tsx
 'use client'
 
-import React, { useMemo } from 'react'
+import React, { useMemo, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 // import Link from 'next/link'
 // import Image from 'next/image'
@@ -34,15 +34,33 @@ import CoachSection from './components/homepage/section-4-coaches'
 import BlogSection from './components/homepage/section-5-blog'
 import FAQSection from './components/homepage/section-6-faq'
 
-export default function Page() {
-    const shuffledCoaches = useMemo(() => {
-        const stored = localStorage.getItem('cachedCoaches')
-        if (stored) return JSON.parse(stored)
+interface Coach {
+    id: number
+    name: string
+    birthdate: string
+    sport: string
+    category: string
+    experience: number
+    image: string
+}
 
-        const result = coachesData.sort(() => Math.random() - 0.5).slice(0, 8)
-        localStorage.setItem('cachedCoaches', JSON.stringify(result))
-        return result
+export default function Page() {
+    const [shuffledCoaches, setShuffledCoaches] = useState<Coach[]>([])
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const stored = localStorage.getItem('cachedCoaches')
+            if (stored) {
+                setShuffledCoaches(JSON.parse(stored))
+            } else {
+                const result = coachesData.sort(() => Math.random() - 0.5).slice(0, 8)
+                localStorage.setItem('cachedCoaches', JSON.stringify(result))
+                setShuffledCoaches(result)
+            }
+        }
     }, [])
+
+    const coaches = useMemo(() => shuffledCoaches, [shuffledCoaches])
 
     return (
         <>
@@ -65,7 +83,7 @@ export default function Page() {
             <TrainingSection />
 
             {/* BLOCK ТРЕНЕРЫ */}
-            <CoachSection coaches={shuffledCoaches} />
+            <CoachSection coaches={coaches} />
 
             {/* BLOCK БЛОГ */}
             <BlogSection />
