@@ -137,9 +137,18 @@ export default function Footer() {
                 <div className="container relative text-center">
                     <div className="grid md:grid-cols-2 items-center gap-6">
                         <div className="md:text-start text-center">
+                            <Link href="/privacy" className="text-gray-300 hover:text-accent-red duration-500 ease-in-out">
+                                Политика конфиденциальности
+                            </Link>
                             {/* <p className="mb-0 text-gray-300">© {new Date().getFullYear()} МБУДО Cпортивная школа «Кашира» <i className="mdi mdi-heart text-red-600"></i> by <Link href="https://dexstudioapp.site/" target="_blank" className="text-reset">DEXSA</Link>.</p> */}
                             <p className="mb-0 text-gray-300">{new Date().getFullYear()} © МБУДО Cпортивная школа «Кашира»</p>
                         </div>
+
+                        {/* <div className="md:text-right text-center">
+                            <Link href="/privacy" className="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
+                                Политика конфиденциальности
+                            </Link>
+                        </div> */}
 
                         {/* <ul className="list-disc footer-list md:text-end text-center space-x-3">
                             <li className="inline-block"><i className="mdi mdi-circle-medium text-gray-400"></i> <Link href="/terms" className="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">Terms</Link></li>

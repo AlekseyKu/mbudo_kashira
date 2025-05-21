@@ -34,6 +34,8 @@ import CoachSection from './components/homepage/section-4-coaches'
 import BlogSection from './components/homepage/section-5-blog'
 import FAQSection from './components/homepage/section-6-faq'
 
+import CookieConsent from './components/cookie-popup'
+
 interface Coach {
     id: number
     name: string
@@ -95,6 +97,9 @@ export default function Page() {
             <Footer />
             <ScrollToTop />
             <Switcher />
+
+            {/* POPUP */}
+            <CookieConsent />
         </>
     )
 }
