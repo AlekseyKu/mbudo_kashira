@@ -4,6 +4,9 @@ import type { Metadata } from "next";
 import './assets/css/materialdesignicons.min.css'
 import './assets/scss/tailwind.scss'
 
+import CookieConsent from './components/cookie-popup'
+
+
 export const metadata: Metadata = {
   title: "Кашира - Спортивная школа",
   description: "МБУДО СШ «Кашира»",
@@ -31,6 +34,7 @@ export default function RootLayout({
         className={` dark:bg-slate-900`}
       >
         {children}
+        <CookieConsent /> 
       </body>
     </html>
   );

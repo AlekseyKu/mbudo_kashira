@@ -99,7 +99,7 @@ export default function Page() {
             <Switcher />
 
             {/* POPUP */}
-            <CookieConsent />
+            {/* <CookieConsent /> */}
         </>
     )
 }
