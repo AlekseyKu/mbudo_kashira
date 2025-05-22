@@ -66,7 +66,7 @@ export default function Footer() {
                                     <div className="flex mt-4">
                                         <FaVk className="align-middle text-2xl text-accent-red me-2" />
                                         <div className="">
-                                            <a href="https://vk.com/public177031794" target="_blank" className="text-gray-300 hover:text-accent-red dark:hover:text-accent-red duration-500 ease-in-out">Мы ВКонтакте</a>
+                                            <a href="https://vk.com/club226006575" target="_blank" className="text-gray-300 hover:text-accent-red dark:hover:text-accent-red duration-500 ease-in-out">Мы ВКонтакте</a>
                                         </div>
                                     </div>
 

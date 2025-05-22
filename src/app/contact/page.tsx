@@ -81,7 +81,7 @@ export default function ContactsPage() {
             <div className="mt-6">
               <p className="text-sm text-slate-500 dark:text-slate-400 mb-2">Мы в VK:</p>
               <Link
-                href="https://vk.com/public177031794"
+                href="https://vk.com/club226006575"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-primary-blue dark:text-white hover:text-accent-red dark:hover:text-accent-red transition text-base"

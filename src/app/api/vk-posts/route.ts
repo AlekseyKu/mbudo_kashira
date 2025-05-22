@@ -4,13 +4,14 @@ import fs from 'fs'
 import path from 'path'
 
 const CACHE_PATH = path.resolve(process.cwd(), 'public/vk-posts-cache.json')
-const CACHE_TTL = 24 * 60 * 60 * 1000  // 24 часа в мс
+const CACHE_TTL = 24 * 60 * 60 * 1000  // 24 часа в миллисекундах
 const CACHE_TTL_SEC = CACHE_TTL / 1000
 
 export async function GET() {
   try {
     const token = process.env.NEXT_PUBLIC_VK_TOKEN!
-    const ownerId = -177031794
+    // const ownerId = -177031794
+    const ownerId = -226006575
 
     // 1. Локальный файловый кеш в dev
     if (process.env.NODE_ENV === 'development' && fs.existsSync(CACHE_PATH)) {
