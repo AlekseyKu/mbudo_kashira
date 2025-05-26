@@ -96,14 +96,14 @@ export default function ContactsPage() {
           <div className="flex flex-col items-center justify-center pt-10">
             {/* <p className="text-sm text-slate-500 mb-3 dark:text-slate-400">Наш QR-код:</p> */}
             <Image
-              src="/images/qr-white.webp"
+              src="/images/qr/qr-code.webp"
               alt="QR Code"
               width={250}
               height={250}
               className="block dark:hidden rounded-lg shadow-md"
             />
             <Image
-              src="/images/qr-black.webp"
+              src="/images/qr/qr-code-w.webp"
               alt="QR Code"
               width={250}
               height={250}
