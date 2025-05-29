@@ -15,7 +15,7 @@ export interface staffData {
     {
       name: "Царев Алексей Николаевич",
       position: "Заместитель директора по спортивной подготовке",
-      image: "/images/team/8.jpg",
+      image: "/images/team/2.jpg",
     },
     {
       name: "Бирдычкина Лидия Васильевна",
@@ -25,12 +25,12 @@ export interface staffData {
     {
       name: "Сухов Сергей Анатольевич",
       position: "Заместитель директора по безопасности",
-      image: "/images/team/8.jpg",
+      image: "/images/team/2.jpg",
     },
     {
       name: "Николаев Дмитрий Павлович",
       position: "Главный инженер",
-      image: "/images/team/8.jpg",
+      image: "/images/team/2.jpg",
     },
     {
       name: "Сурогина Елена Юрьевна",
@@ -40,7 +40,7 @@ export interface staffData {
     {
       name: "Майоров Дмитрий Николаевич",
       position: "Специалист по охране труда",
-      image: "/images/team/8.jpg",
+      image: "/images/team/2.jpg",
     },
     {
       name: "Дыкуха Лидия Николаевна",
