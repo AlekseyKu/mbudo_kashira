@@ -18,7 +18,7 @@ const menuLinks = [
     { name: 'Главная', href: '/' },
     { name: 'О нас', href: '/aboutus' },
     { name: 'Тренировки', href: '/trainings' },
-    { name: 'Тенеры', href: '/coaches' },
+    { name: 'Тренеры', href: '/coaches' },
     { name: 'Расписание', href: '/tables' },
     { name: 'Наш блог', href: '/blog' },
     { name: 'Документы', href: '/docs' },

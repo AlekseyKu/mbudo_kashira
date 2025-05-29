@@ -28,8 +28,18 @@ export interface staffData {
       image: "/images/team/8.jpg",
     },
     {
+      name: "Николаев Дмитрий Павлович",
+      position: "Главный инженер",
+      image: "/images/team/8.jpg",
+    },
+    {
       name: "Сурогина Елена Юрьевна",
       position: "Заведующая по виду спорта",
+      image: "/images/team/8.jpg",
+    },
+    {
+      name: "Майоров Дмитрий Николаевич",
+      position: "Специалист по охране труда",
       image: "/images/team/8.jpg",
     },
     {

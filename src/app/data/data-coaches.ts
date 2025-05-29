@@ -1,15 +1,15 @@
 // src/app/data-coaches.ts
 
 export const coachesData = [
-  {
-    id: 1,
-    name: 'Афанасьев Дмитрий Алексеевич',
-    birthdate: '05.03.1990',
-    sport: 'Баскетбол',
-    category: '1 категория',
-    experience: 18,
-    image: '/images/team/2.jpg'
-  },
+  // {
+  //   id: 1,
+  //   name: 'Афанасьев Дмитрий Алексеевич',
+  //   birthdate: '05.03.1990',
+  //   sport: 'Баскетбол',
+  //   category: '1 категория',
+  //   experience: 18,
+  //   image: '/images/team/2.jpg'
+  // },
   {
     id: 2,
     name: 'Балабанов Юрий Александрович',
@@ -46,15 +46,15 @@ export const coachesData = [
     experience: 11,
     image: '/images/team/2.jpg'
   },
-  {
-    id: 6,
-    name: 'Давыдов Игорь Владимирович',
-    birthdate: '22.05.1983',
-    sport: 'Киокушин',
-    category: '1 категория',
-    experience: 16,
-    image: '/images/team/2.jpg'
-  },
+  // {
+  //   id: 6,
+  //   name: 'Давыдов Игорь Владимирович',
+  //   birthdate: '22.05.1983',
+  //   sport: 'Киокушин',
+  //   category: '1 категория',
+  //   experience: 16,
+  //   image: '/images/team/2.jpg'
+  // },
   {
     id: 7,
     name: 'Дереза Сергей Леонидович',
