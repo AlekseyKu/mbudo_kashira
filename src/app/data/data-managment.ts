@@ -13,11 +13,6 @@ export interface staffData {
       image: "/images/team/8.jpg",
     },
     {
-      name: "Царев Алексей Николаевич",
-      position: "Заместитель директора по спортивной подготовке",
-      image: "/images/team/2.jpg",
-    },
-    {
       name: "Бирдычкина Лидия Васильевна",
       position: "Заместитель директора по административно-хозяйственной деятельности",
       image: "/images/team/8.jpg",
@@ -28,14 +23,29 @@ export interface staffData {
       image: "/images/team/2.jpg",
     },
     {
+      name: "Сурогина Елена Юрьевна",
+      position: "Заместитель директора по спортивной подготовке",
+      image: "/images/team/8.jpg",
+    },
+    {
+      name: "Кузнецова Елена Юрьевна",
+      position: "Заведующая по виду спорта",
+      image: "/images/team/8.jpg",
+    },
+    {
+      name: "Бондарь Татьяна Сергеевна",
+      position: "Заведующая по виду спорта",
+      image: "/images/team/8.jpg",
+    },
+    {
+      name: "Полякова Елена Валерьевна",
+      position: "Специалист по кадрам",
+      image: "/images/team/8.jpg",
+    },
+    {
       name: "Николаев Дмитрий Павлович",
       position: "Главный инженер",
       image: "/images/team/2.jpg",
-    },
-    {
-      name: "Сурогина Елена Юрьевна",
-      position: "Заведующая по виду спорта",
-      image: "/images/team/8.jpg",
     },
     {
       name: "Майоров Дмитрий Николаевич",

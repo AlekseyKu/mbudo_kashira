@@ -13,13 +13,11 @@ const infrastructure = [
 
 const sports = [
   { name: "Футбол", icon: "/images/sport/icons/1.webp" },
-  { name: "Баскетбол", icon: "/images/sport/icons/2.webp" },
   { name: "Лёгкая атлетика", icon: "/images/sport/icons/3.webp" },
   { name: "Плавание", icon: "/images/sport/icons/4.webp" },
-  { name: "Киокушин", icon: "/images/sport/icons/5.webp" },
   { name: "Волейбол", icon: "/images/sport/icons/6.webp" },
   { name: "Самбо", icon: "/images/sport/icons/7.webp" },
-  { name: "Лыжи", icon: "/images/sport/icons/8.webp" },
+  { name: "Лыжные гонки", icon: "/images/sport/icons/8.webp" },
   { name: "Шахматы", icon: "/images/sport/icons/9.webp" },
   { name: "Бокс", icon: "/images/sport/icons/10.webp" },
   { name: "Спортивная гимнастика", icon: "/images/sport/icons/11.webp" },
@@ -114,7 +112,7 @@ export default function AboutSchool() {
         <AnimatedDiv className="text-center mt-12" transition={{ delay: 0.2 }}>
           <h3 className="text-left text-primary-blue dark:text-white text-xl font-semibold mb-4">Виды спорта</h3>
           <p className="text-left text-slate-600 dark:text-slate-300 text-lg mb-6 mx-auto">
-            В «Спортивной школе «Кашира» развиваются 11 видов спорта:
+            В «Спортивной школе «Кашира» развиваются 9 видов спорта:
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {sports.map((sport, i) => (

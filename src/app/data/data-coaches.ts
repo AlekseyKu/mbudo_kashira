@@ -113,7 +113,7 @@ export const coachesData = [
     id: 13,
     name: 'Кашкин Игорь Васильевич',
     birthdate: '02.11.1975',
-    sport: 'Лыжи',
+    sport: 'Лыжные гонки',
     category: 'Высшая категория',
     experience: 14,
     image: '/images/team/2.jpg'
@@ -134,15 +134,6 @@ export const coachesData = [
     sport: 'Самбо',
     category: 'Без категории',
     experience: 2,
-    image: '/images/team/2.jpg'
-  },
-  {
-    id: 16,
-    name: 'Кутепов Алексей Владимирович',
-    birthdate: '18.06.1976',
-    sport: 'Киокушин',
-    category: '1 категория',
-    experience: 16,
     image: '/images/team/2.jpg'
   },
   {
@@ -198,5 +189,14 @@ export const coachesData = [
     category: '1 категория',
     experience: 36,
     image: '/images/team/3.jpg'
+  },
+  {
+    id: 23,
+    name: 'Бакеев Александр Владимирович',
+    birthdate: '03.04.1973',
+    sport: 'Шахматы',
+    category: 'Без категории',
+    experience: 1.6,
+    image: '/images/team/2.jpg'
   }
 ];

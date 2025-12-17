@@ -26,12 +26,6 @@ export const trainingsData = [
       desc: 'Гармоничное развитие тела, выносливость и дыхательная тренировка.',
     },
     {
-      id: 5,
-      image: '/images/sport/5.webp',
-      title: 'Киокушин',
-      desc: 'Жёсткий стиль карате, формирует силу духа и дисциплину.',
-    },
-    {
       id: 6,
       image: '/images/sport/6.webp',
       title: 'Волейбол',
@@ -46,7 +40,7 @@ export const trainingsData = [
     {
       id: 8,
       image: '/images/sport/8.webp',
-      title: 'Лыжи',
+      title: 'Лыжные гонки',
       desc: 'Зимний спорт на свежем воздухе, тренирует ноги и дыхание.',
     },
     {
