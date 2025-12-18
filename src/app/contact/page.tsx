@@ -9,6 +9,14 @@ import Navbar from '../components/navbar/navbar'
 import ScrollToTop from '../components/scroll-to-top'
 import Switcher from '../components/switcher'
 
+const contactObjects = [
+  { name: 'ФОК «Олимп»', phone: '+7 (49669) 6-76-89' },
+  { name: 'Стадион «Спартак»', phone: '+7 (49669) 3-15-57' },
+  { name: 'Стадион «Локомотив»', phone: '+7 (49669) 6-76-91' },
+  { name: 'Спортзал «Юность»', phone: '+7 (49669) 2-24-49' },
+  { name: 'Шахматный клуб', phone: '+7 (49669) 2-27-34' },
+]
+
 export default function ContactsPage() {
   return (
     <>
@@ -90,6 +98,7 @@ export default function ContactsPage() {
                 Перейти в группу
               </Link>
             </div>
+
           </div>
 
           {/* Правая колонка: QR-код */}
@@ -109,6 +118,38 @@ export default function ContactsPage() {
               height={250}
               className="hidden dark:block rounded-lg shadow-md"
             />
+          </div>
+        </div>
+
+        {/* Наши объекты */}
+        <div className="max-w-5xl mx-auto mt-10 bg-white dark:bg-slate-900 p-6 rounded-xl shadow-lg">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+            <div className="flex-1">
+              <h3 className="text-lg font-semibold text-primary-blue dark:text-white mb-4">
+                Наши объекты
+              </h3>
+              <ul className="space-y-2 text-slate-700 dark:text-slate-300 text-sm">
+                {contactObjects.map((obj, index) => (
+                  <li key={index} className="flex items-center gap-2">
+                    <span>{obj.name}</span>
+                    <span className="text-slate-400">—</span>
+                    <a
+                      href={`tel:${obj.phone.replace(/\s|\(|\)/g, '')}`}
+                      className="text-primary-blue dark:text-accent-red font-medium hover:underline"
+                    >
+                      {obj.phone}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <Link
+              href="/objects"
+              className="inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-md border border-primary-blue text-primary-blue hover:bg-primary-blue hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-primary-blue transition-colors whitespace-nowrap"
+            >
+              Посмотреть на карте
+            </Link>
           </div>
         </div>
       </section>

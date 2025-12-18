@@ -33,7 +33,7 @@ export default function Navbar({navlight,tagline}:{navlight:any, tagline:any}) {
         return () => {
             window.removeEventListener('scroll',handlerScroll)
           };
-    },[])
+    },[pathname])
 
   return (
     <>
@@ -81,11 +81,11 @@ export default function Navbar({navlight,tagline}:{navlight:any, tagline:any}) {
 
 
                         {/* === О НАС === */}
-                        <li className={`has-submenu parent-parent-menu-item ${['/aboutus', '/team', '/objects', '/vacancies'].includes(manu) ? 'active' : ''}`}>
+                        <li className={`has-submenu parent-parent-menu-item ${['/aboutus', '/team', '/trainings', '/objects', '/vacancies'].includes(manu) ? 'active' : ''}`}>
                             <Link
                                 href="#"
                                 onClick={() => setSubManu(subManu === '/cours-item' ? '' : '/cours-item')}
-                                className={`${['/aboutus', '/team', '/objects', '/vacancies'].includes(manu) ? 'text-accent-red' : ''}`}
+                                className={`${['/aboutus', '/team', '/trainings', '/objects', '/vacancies'].includes(manu) ? 'text-accent-red' : ''}`}
                             >
                                 О НАС
                             </Link>
@@ -102,6 +102,11 @@ export default function Navbar({navlight,tagline}:{navlight:any, tagline:any}) {
                                     </Link>
                                 </li>
                                 <li>
+                                    <Link href="/trainings" className={`sub-menu-item ${manu === '/trainings' ? 'text-accent-red' : ''}`}>
+                                        ТРЕНИРОВКИ
+                                    </Link>
+                                </li>
+                                <li>
                                     <Link href="/objects" className={`sub-menu-item ${manu === '/objects' ? 'text-accent-red' : ''}`}>
                                         ОБЪЕКТЫ
                                     </Link>
@@ -115,11 +120,33 @@ export default function Navbar({navlight,tagline}:{navlight:any, tagline:any}) {
                         </li>
 
 
-                        {/* === ТРЕНИРОВКИ === */}
-                        <li>
-                            <Link href="/trainings" className={`sub-menu-item ${manu === '/trainings' ? 'text-accent-red' : ''}`}>
-                                ТРЕНИРОВКИ
+                        {/* === УСЛУГИ === */}
+                        <li className={`has-submenu parent-parent-menu-item ${['/services/training-schedule', '/services/pool-schedule', '/services/paid-services'].includes(manu) ? 'active' : ''}`}>
+                            <Link
+                                href="#"
+                                onClick={() => setSubManu(subManu === '/services-item' ? '' : '/services-item')}
+                                className={`${['/services/training-schedule', '/services/pool-schedule', '/services/paid-services'].includes(manu) ? 'text-accent-red' : ''}`}
+                            >
+                                УСЛУГИ
                             </Link>
+                            <span className="menu-arrow"></span>
+                            <ul className={`submenu ${['/services-item'].includes(subManu) ? 'open' : ''}`}>
+                                <li>
+                                    <Link href="/services/training-schedule" className={`sub-menu-item ${manu === '/services/training-schedule' ? 'text-accent-red' : ''}`}>
+                                        РАСПИСАНИЕ ТРЕНИРОВОК
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/services/pool-schedule" className={`sub-menu-item ${manu === '/services/pool-schedule' ? 'text-accent-red' : ''}`}>
+                                        РАСПИСАНИЕ СЕАНСОВ БАССЕЙНА
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/services/paid-services" className={`sub-menu-item ${manu === '/services/paid-services' ? 'text-accent-red' : ''}`}>
+                                        ПЛАТНЫЕ УСЛУГИ
+                                    </Link>
+                                </li>
+                            </ul>
                         </li>
                         {/* <li className={`has-submenu parent-parent-menu-item ${['/trainings', '/coaches'].includes(manu) ? 'active' : ''}`}>
                             <Link

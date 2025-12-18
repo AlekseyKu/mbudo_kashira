@@ -14,11 +14,11 @@ import AnimatedHead from "../components/animated-head";
 
 const locations = [
   // Формат координат: [долгота, широта]
-  { id: 1, name: 'ФОК "Олимп"', coords: [38.189717, 54.842417], address: 'г. Кашира, ул. Металлургов д. 7 стр. 2' },
-  { id: 2, name: 'Стадион "Спартак"', coords: [38.158904, 54.835062], address: 'г. Кашира, ул. Карла Маркса д. 29' },
-  { id: 3, name: 'Стадион "Локомотив"', coords: [38.190483, 54.853142], address: 'г. Кашира, ул. Интернациональная' }, // Уточнить адрес
-  { id: 4, name: 'Спортзал "Юность"', coords: [38.241861, 54.847511], address: 'г. Кашира, ул. Новокаширская д.4' },
-  { id: 5, name: 'Шахматный клуб', coords: [38.241228, 54.843771], address: 'г. Кашира, ул. 8 марта д. 35а' },
+  { id: 1, name: 'ФОК "Олимп"', coords: [38.189717, 54.842417], address: 'г. Кашира, ул. Металлургов д. 7 стр. 2', phone: '+7 (49669) 6-76-89' },
+  { id: 2, name: 'Стадион "Спартак"', coords: [38.158904, 54.835062], address: 'г. Кашира, ул. Карла Маркса д. 29', phone: '+7 (49669) 3-15-57' },
+  { id: 3, name: 'Стадион "Локомотив"', coords: [38.190483, 54.853142], address: 'г. Кашира, ул. Интернациональная', phone: '+7 (49669) 6-76-91' }, // Уточнить адрес
+  { id: 4, name: 'Спортзал "Юность"', coords: [38.241861, 54.847511], address: 'г. Кашира, ул. Новокаширская д.4', phone: '+7 (49669) 2-24-49' },
+  { id: 5, name: 'Шахматный клуб', coords: [38.241228, 54.843771], address: 'г. Кашира, ул. 8 марта д. 35а', phone: '+7 (49669) 2-27-34' },
 ]
 
 export default function ContactsPage() {
@@ -181,6 +181,15 @@ export default function ContactsPage() {
                 >
                   <h4 className="text-lg font-semibold border-primary-blue">{loc.name}</h4>
                   <p className="text-slate-500 text-sm mt-1">{loc.address}</p>
+                  {loc.phone && (
+                    <a 
+                      href={`tel:${loc.phone.replace(/\s|\(|\)/g, '')}`}
+                      className="text-primary-blue dark:text-accent-red text-sm font-medium mt-2 inline-block hover:underline"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      {loc.phone}
+                    </a>
+                  )}
                 </motion.div>
               ))}
 
