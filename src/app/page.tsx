@@ -29,6 +29,7 @@ import { coachesData } from './data/data-coaches'
 
 import HeroSection from './components/homepage/section-1-hero'
 import InfoLineSection from './components/homepage/section-2-infoLine'
+import HistorySection from './components/homepage/section-2-5-history'
 import TrainingSection from './components/homepage/section-3-trainings'
 import CoachSection from './components/homepage/section-4-coaches'
 import BlogSection from './components/homepage/section-5-blog'
@@ -80,6 +81,9 @@ export default function Page() {
 
             {/* BLOCK LINE INFO */}
             <InfoLineSection />
+
+            {/* BLOCK ИСТОРИЯ ШКОЛЫ */}
+            <HistorySection />
 
             {/* BLOCK ТРЕНИРОВКИ */}
             <TrainingSection />
