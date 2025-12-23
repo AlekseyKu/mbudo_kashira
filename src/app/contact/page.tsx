@@ -4,7 +4,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FiMapPin, FiPhoneCall, FiMail } from 'react-icons/fi'
-import { FaVk } from 'react-icons/fa'
+import { FaVk, FaTelegramPlane } from 'react-icons/fa'
 import Navbar from '../components/navbar/navbar'
 import ScrollToTop from '../components/scroll-to-top'
 import Switcher from '../components/switcher'
@@ -95,6 +95,19 @@ export default function ContactsPage() {
                 className="inline-flex items-center gap-2 text-primary-blue dark:text-white hover:text-accent-red dark:hover:text-accent-red transition text-base"
               >
                 <FaVk className="text-xl" />
+                Перейти в группу
+              </Link>
+            </div>
+
+            <div className="mt-6">
+              <p className="text-sm text-slate-500 dark:text-slate-400 mb-2">Мы в TG:</p>
+              <Link
+                href="https://t.me/fokolimpkashira"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-primary-blue dark:text-white hover:text-accent-red dark:hover:text-accent-red transition text-base"
+              >
+                <FaTelegramPlane className="text-xl" />
                 Перейти в группу
               </Link>
             </div>

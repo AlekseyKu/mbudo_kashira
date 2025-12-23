@@ -81,11 +81,11 @@ export default function Navbar({navlight,tagline}:{navlight:any, tagline:any}) {
 
 
                         {/* === О НАС === */}
-                        <li className={`has-submenu parent-parent-menu-item ${['/aboutus', '/team', '/trainings', '/objects', '/vacancies'].includes(manu) ? 'active' : ''}`}>
+                        <li className={`has-submenu parent-parent-menu-item ${['/aboutus', '/team', '/trainings', '/objects', '/vacancies', '/partners'].includes(manu) ? 'active' : ''}`}>
                             <Link
                                 href="#"
                                 onClick={() => setSubManu(subManu === '/cours-item' ? '' : '/cours-item')}
-                                className={`${['/aboutus', '/team', '/trainings', '/objects', '/vacancies'].includes(manu) ? 'text-accent-red' : ''}`}
+                                className={`${['/aboutus', '/team', '/trainings', '/objects', '/vacancies', '/partners'].includes(manu) ? 'text-accent-red' : ''}`}
                             >
                                 О НАС
                             </Link>
@@ -114,6 +114,11 @@ export default function Navbar({navlight,tagline}:{navlight:any, tagline:any}) {
                                 <li>
                                     <Link href="/vacancies" className={`sub-menu-item ${manu === '/vacancies' ? 'text-accent-red' : ''}`}>
                                         ВАКАНСИИ
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/partners" className={`sub-menu-item ${manu === '/partners' ? 'text-accent-red' : ''}`}>
+                                        ПАРТНЁРЫ
                                     </Link>
                                 </li>
                             </ul>
