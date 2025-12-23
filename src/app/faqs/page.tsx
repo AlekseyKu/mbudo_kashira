@@ -18,7 +18,7 @@ export default function Page() {
             <div className="absolute inset-0 bg-black opacity-80"></div>
             <div className="container relative">
                 <div className="grid grid-cols-1 text-center mt-10">
-                    <h3 className="md:text-3xl text-2xl md:leading-normal leading-normal font-semibold text-white">Frequently Asked Questions</h3>
+                    <h3 className="md:text-3xl text-2xl md:leading-normal leading-normal font-semibold text-white">Часто задаваемые вопросы</h3>
                 </div>
             </div>
         </section>
@@ -36,35 +36,14 @@ export default function Page() {
                     <div className="lg:col-span-4 md:col-span-5">
                         <div className="rounded-md shadow dark:shadow-gray-700 p-6 sticky top-20">
                             <ul className="list-unstyled sidebar-nav mb-0 py-0" id="navmenu-nav">
-                                <li className="navbar-item p-0"><Link1 activeClass="active" spy={true} smooth={true} duration={500} to="tech" className="text-base font-medium navbar-link">Buying Questions</Link1></li>
-                                <li className="navbar-item mt-3 p-0"><Link1 activeClass="active" spy={true} smooth={true} duration={500} to="general" className="text-base font-medium navbar-link">General Questions</Link1></li>
-                                <li className="navbar-item mt-3 p-0"><Link1 activeClass="active" spy={true} smooth={true} duration={500} to="payment" className="text-base font-medium navbar-link">Payments Questions</Link1></li>
-                                <li className="navbar-item mt-3 p-0"><Link1 activeClass="active" spy={true} smooth={true} duration={500} to="support" className="text-base font-medium navbar-link">Support Questions</Link1></li>
+                                <li className="navbar-item p-0"><Link1 activeClass="active" spy={true} smooth={true} duration={500} to="general" className="text-base font-medium navbar-link">Общие вопросы</Link1></li>
                             </ul>
                         </div>
                     </div>
 
                     <div className="lg:col-span-8 md:col-span-7">
-                        <div id="tech">
-                            <h5 className="text-xl font-semibold mb-6">Buying Product</h5>
-
-                            <Faq/>
-                        </div>
-
-                        <div id="general" className="mt-6">
-                            <h5 className="text-xl font-semibold mb-6">General Questions</h5>
-
-                            <Faq/>
-                        </div>
-
-                        <div id="payment" className="mt-6">
-                            <h5 className="text-xl font-semibold mb-6">Payments Questions</h5>
-
-                            <Faq/>
-                        </div>
-
-                        <div id="support" className="mt-6">
-                            <h5 className="text-xl font-semibold mb-6">Support Questions</h5>
+                        <div id="general">
+                            <h5 className="text-xl font-semibold mb-6">Общие вопросы</h5>
 
                             <Faq/>
                         </div>
