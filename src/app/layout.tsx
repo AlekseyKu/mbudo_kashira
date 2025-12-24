@@ -3,8 +3,13 @@
 import type { Metadata } from "next";
 import './assets/css/materialdesignicons.min.css'
 import './assets/scss/tailwind.scss'
+import './globals.css'
 
 import CookieConsent from './components/cookie-popup'
+import { AccessibilityProvider } from './contexts/accessibility-context'
+import AccessibilityPanel from './components/accessibility/accessibility-panel'
+import AccessibilityButton from './components/accessibility/accessibility-button'
+import Magnifier from './components/accessibility/magnifier'
 
 
 export const metadata: Metadata = {
@@ -33,8 +38,13 @@ export default function RootLayout({
       <body
         className={` dark:bg-slate-900`}
       >
-        {children}
-        <CookieConsent /> 
+        <AccessibilityProvider>
+          {children}
+          <AccessibilityButton />
+          <AccessibilityPanel />
+          <Magnifier />
+          <CookieConsent />
+        </AccessibilityProvider>
       </body>
     </html>
   );

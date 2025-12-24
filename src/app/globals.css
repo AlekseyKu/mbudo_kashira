@@ -2,4 +2,99 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Accessibility Styles */
+
+/* Высокий контраст */
+html.high-contrast {
+  --primary-blue: #000000;
+  --accent-red: #FF0000;
+  --bg-white: #FFFFFF;
+  --text-dark: #000000;
+  --text-light: #FFFFFF;
+}
+
+html.high-contrast body {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+}
+
+html.high-contrast.dark body {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+html.high-contrast * {
+  border-color: currentColor !important;
+}
+
+html.high-contrast .text-primary-blue,
+html.high-contrast .text-slate-700,
+html.high-contrast .text-slate-900 {
+  color: #000000 !important;
+}
+
+html.high-contrast.dark .text-white,
+html.high-contrast.dark .text-slate-300 {
+  color: #FFFFFF !important;
+}
+
+html.high-contrast .bg-primary-blue,
+html.high-contrast .bg-slate-100,
+html.high-contrast .bg-slate-50 {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+}
+
+html.high-contrast.dark .bg-slate-900,
+html.high-contrast.dark .bg-slate-800 {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+html.high-contrast .text-accent-red,
+html.high-contrast .border-accent-red {
+  color: #FF0000 !important;
+  border-color: #FF0000 !important;
+}
+
+/* Упрощенная версия */
+html.simplified * {
+  background-image: none !important;
+}
+
+html.simplified img[alt=""] {
+  display: none;
+}
+
+html.simplified section[style*="background-image"] {
+  background-image: none !important;
+  background-color: #F2F2F2 !important;
+}
+
+html.simplified.dark section[style*="background-image"] {
+  background-color: #1a1a1a !important;
+}
+
+/* Отключение анимаций */
+html.no-animations *,
+html.no-animations *::before,
+html.no-animations *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Увеличенные отступы */
+html.increased-spacing * {
+  letter-spacing: 0.05em;
+}
+
+html.increased-spacing p,
+html.increased-spacing li,
+html.increased-spacing div {
+  margin-bottom: 1.5em !important;
+  line-height: 1.8 !important;
+}
+
 
