@@ -8,6 +8,7 @@ import { FaVk, FaTelegramPlane } from 'react-icons/fa'
 import Navbar from '../components/navbar/navbar'
 import ScrollToTop from '../components/scroll-to-top'
 import Switcher from '../components/switcher'
+import ContactForm from '../components/contact-form'
 
 const contactObjects = [
   { name: 'ФОК «Олимп»', phone: '+7 (49669) 6-76-89' },
@@ -165,6 +166,9 @@ export default function ContactsPage() {
             </Link>
           </div>
         </div>
+
+        {/* Форма обратной связи */}
+        <ContactForm />
       </section>
 
 

@@ -28,6 +28,7 @@
     "react-modal-video": "2.0.2",
     "react-scroll": "1.9.0",
     "react-type-animation": "3.2.0",
+    "resend": "^6.6.0",
     "swiper": "11.1.14",
     "tiny-slider-react": "0.5.7",
     "xlsx": "^0.18.5"
