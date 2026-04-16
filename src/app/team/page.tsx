@@ -80,7 +80,7 @@ export default function CoachesPage() {
                   alt={member.name}
                   width={80}
                   height={80}
-                  className="rounded-full object-cover shrink-0"
+                  className="size-20 rounded-full object-cover shrink-0"
                 />
                 <div>
                   <h4 className="text-lg font-semibold text-primary-blue dark:text-white">
@@ -125,7 +125,7 @@ export default function CoachesPage() {
                   alt={coach.name}
                   width={80}
                   height={80}
-                  className="rounded-full object-cover shrink-0"
+                  className="size-20 rounded-full object-cover shrink-0"
                 />
                 <div>
                   <h4 className="text-lg font-semibold text-primary-blue dark:text-white">
@@ -148,45 +148,47 @@ export default function CoachesPage() {
             className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50"
             onClick={() => setSelectedCoach(null)}
           >
-            <div className="bg-white dark:bg-slate-900 rounded-xl p-6 max-w-md w-full relative shadow-lg">
+            <div className="bg-white dark:bg-slate-900 rounded-xl p-6 max-w-2xl w-full relative shadow-lg">
               <button
                 className="absolute top-2 right-2 text-xl text-slate-400 hover:text-accent-red"
                 onClick={() => setSelectedCoach(null)}
               >
                 &times;
               </button>
-              <div className="flex flex-col items-center text-center space-y-4">
+              <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-6">
                 <Image
                   src={selectedCoach.image}
                   alt={selectedCoach.name}
-                  width={100}
-                  height={100}
-                  className="rounded-full object-cover"
+                  width={180}
+                  height={220}
+                  className="w-40 h-52 md:w-44 md:h-56 rounded-2xl object-cover shrink-0"
                 />
-                <h4 className="text-xl font-semibold text-primary-blue">
-                  {selectedCoach.name}
-                </h4>
-                <p className="text-slate-500">
-                  Вид спорта:{' '}
-                  <span className="text-primary-blue font-medium">
-                    {selectedCoach.sport}
-                  </span>
-                </p>
-                <p className="text-slate-500">
-                  Категория:{' '}
-                  <span className="text-primary-blue font-medium">
-                    {selectedCoach.category}
-                  </span>
-                </p>
-                <p className="text-slate-500">
-                  Опыт:{' '}
-                  <span className="text-primary-blue font-medium">
-                    {selectedCoach.experience} лет
-                  </span>
-                </p>
-                <p className="text-slate-400 text-sm">
-                  Дата рождения: {selectedCoach.birthdate}
-                </p>
+                <div className="space-y-2">
+                  <h4 className="text-2xl font-semibold text-primary-blue">
+                    {selectedCoach.name}
+                  </h4>
+                  <p className="text-slate-500">
+                    Вид спорта:{' '}
+                    <span className="text-primary-blue font-medium">
+                      {selectedCoach.sport}
+                    </span>
+                  </p>
+                  <p className="text-slate-500">
+                    Категория:{' '}
+                    <span className="text-primary-blue font-medium">
+                      {selectedCoach.category}
+                    </span>
+                  </p>
+                  <p className="text-slate-500">
+                    Опыт:{' '}
+                    <span className="text-primary-blue font-medium">
+                      {selectedCoach.experience} лет
+                    </span>
+                  </p>
+                  <p className="text-slate-400 text-sm">
+                    Дата рождения: {selectedCoach.birthdate}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -199,25 +201,27 @@ export default function CoachesPage() {
           className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50"
           onClick={() => setSelectedStaff(null)}
         >
-          <div className="bg-white dark:bg-slate-900 rounded-xl p-6 max-w-md w-full relative shadow-lg">
+          <div className="bg-white dark:bg-slate-900 rounded-xl p-6 max-w-2xl w-full relative shadow-lg">
             <button
               className="absolute top-2 right-2 text-xl text-slate-400 hover:text-accent-red"
               onClick={() => setSelectedStaff(null)}
             >
               &times;
             </button>
-            <div className="flex flex-col items-center text-center space-y-4">
+            <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-6">
               <Image
                 src={selectedStaff.image}
                 alt={selectedStaff.name}
-                width={100}
-                height={100}
-                className="rounded-full object-cover"
+                width={180}
+                height={220}
+                className="w-40 h-52 md:w-44 md:h-56 rounded-2xl object-cover shrink-0"
               />
-              <h4 className="text-xl font-semibold text-primary-blue">
-                {selectedStaff.name}
-              </h4>
-              <p className="text-slate-500">{selectedStaff.position}</p>
+              <div className="space-y-2">
+                <h4 className="text-2xl font-semibold text-primary-blue">
+                  {selectedStaff.name}
+                </h4>
+                <p className="text-slate-500">{selectedStaff.position}</p>
+              </div>
             </div>
           </div>
         </div>

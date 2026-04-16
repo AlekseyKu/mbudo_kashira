@@ -17,7 +17,7 @@ export const coachesData = [
     sport: 'Футбол',
     category: '1 категория',
     experience: 10,
-    image: '/images/team/2.jpg'
+    image: '/images/photo/coaches/Балабанов.jpg'
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ export const coachesData = [
     sport: 'Лёгкая атлетика',
     category: 'Высшая категория',
     experience: 8,
-    image: '/images/team/3.jpg'
+    image: '/images/photo/coaches/Богданова.jpg'
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ export const coachesData = [
     sport: 'Плавание',
     category: 'Без категории',
     experience: 4,
-    image: '/images/team/2.jpg'
+    image: '/images/photo/coaches/головицын.jpg'
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ export const coachesData = [
     sport: 'Плавание',
     category: '1 категория',
     experience: 11,
-    image: '/images/team/2.jpg'
+    image: '/images/photo/coaches/Григорьев.jpg'
   },
   // {
   //   id: 6,
@@ -62,7 +62,7 @@ export const coachesData = [
     sport: 'Плавание',
     category: '1 категория',
     experience: 7,
-    image: '/images/team/2.jpg'
+    image: '/images/photo/coaches/Дереза.jpg'
   },
   {
     id: 8,
@@ -71,7 +71,7 @@ export const coachesData = [
     sport: 'Футбол',
     category: '1 категория',
     experience: 34,
-    image: '/images/team/3.jpg'
+    image: '/images/photo/coaches/Ермолаева.jpg'
   },
   {
     id: 9,
@@ -80,7 +80,7 @@ export const coachesData = [
     sport: 'Плавание',
     category: '1 категория',
     experience: 38,
-    image: '/images/team/3.jpg'
+    image: '/images/photo/coaches/Жилина.jpg'
   },
   {
     id: 10,
@@ -89,7 +89,7 @@ export const coachesData = [
     sport: 'Плавание',
     category: '1 категория',
     experience: 8,
-    image: '/images/team/3.jpg'
+    image: '/images/photo/coaches/Жулина.jpg'
   },
   {
     id: 11,
@@ -98,7 +98,7 @@ export const coachesData = [
     sport: 'Волейбол',
     category: '1 категория',
     experience: 2,
-    image: '/images/team/3.jpg'
+    image: '/images/photo/coaches/Задорожная.jpg'
   },
   {
     id: 12,
@@ -107,7 +107,7 @@ export const coachesData = [
     sport: 'Самбо',
     category: 'Высшая категория',
     experience: 43,
-    image: '/images/team/2.jpg'
+    image: '/images/photo/coaches/Золотарев.jpg'
   },
   {
     id: 13,
@@ -116,7 +116,7 @@ export const coachesData = [
     sport: 'Лыжные гонки',
     category: 'Высшая категория',
     experience: 14,
-    image: '/images/team/2.jpg'
+    image: '/images/photo/coaches/Кашкин.jpg'
   },
   {
     id: 14,
@@ -125,7 +125,7 @@ export const coachesData = [
     sport: 'Шахматы',
     category: 'Высшая категория',
     experience: 23,
-    image: '/images/team/2.jpg'
+    image: '/images/photo/coaches/Конотоп.jpg'
   },
   {
     id: 15,
@@ -134,7 +134,7 @@ export const coachesData = [
     sport: 'Самбо',
     category: 'Без категории',
     experience: 2,
-    image: '/images/team/2.jpg'
+    image: '/images/photo/coaches/Краило.jpg'
   },
   {
     id: 17,
@@ -143,7 +143,7 @@ export const coachesData = [
     sport: 'Плавание',
     category: '1 категория',
     experience: 10,
-    image: '/images/team/2.jpg'
+    image: '/images/photo/coaches/Марюшкин А.jpg'
   },
   {
     id: 18,
@@ -152,7 +152,7 @@ export const coachesData = [
     sport: 'Бокс',
     category: '1 категория',
     experience: 26,
-    image: '/images/team/2.jpg'
+    image: '/images/photo/plug.jpg'
   },
   {
     id: 19,
@@ -161,7 +161,7 @@ export const coachesData = [
     sport: 'Футбол',
     category: 'Без категории',
     experience: 5,
-    image: '/images/team/2.jpg'
+    image: '/images/photo/coaches/Савицкий.jpg'
   },
   {
     id: 20,
@@ -170,7 +170,7 @@ export const coachesData = [
     sport: 'Спортивная гимнастика',
     category: '1 категория',
     experience: 28,
-    image: '/images/team/3.jpg'
+    image: '/images/photo/coaches/Сафонова.jpg'
   },
   {
     id: 21,
@@ -179,7 +179,7 @@ export const coachesData = [
     sport: 'Спортивная гимнастика',
     category: 'Высшая категория',
     experience: 36,
-    image: '/images/team/3.jpg'
+    image: '/images/photo/coaches/Скотникова.jpg'
   },
   {
     id: 22,
@@ -188,7 +188,7 @@ export const coachesData = [
     sport: 'Спортивная гимнастика',
     category: '1 категория',
     experience: 36,
-    image: '/images/team/3.jpg'
+    image: '/images/photo/coaches/Шабан.jpg'
   },
   {
     id: 23,
@@ -197,6 +197,6 @@ export const coachesData = [
     sport: 'Шахматы',
     category: 'Без категории',
     experience: 1.6,
-    image: '/images/team/2.jpg'
+    image: '/images/photo/coaches/Бакеев.jpg'
   }
 ];

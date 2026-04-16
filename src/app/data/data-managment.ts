@@ -10,52 +10,52 @@ export interface staffData {
     {
       name: "Гречишникова Ирина Геннадьевна",
       position: "Директор",
-      image: "/images/team/8.jpg",
+      image: "/images/photo/plug.jpg",
     },
     {
       name: "Бирдычкина Лидия Васильевна",
       position: "Заместитель директора по административно-хозяйственной деятельности",
-      image: "/images/team/8.jpg",
+      image: "/images/photo/leaders/Бирдычкина.jpg",
     },
     {
       name: "Сухов Сергей Анатольевич",
       position: "Заместитель директора по безопасности",
-      image: "/images/team/2.jpg",
+      image: "/images/photo/leaders/Сухов.jpg",
     },
     {
       name: "Сурогина Елена Юрьевна",
       position: "Заместитель директора по спортивной подготовке",
-      image: "/images/team/8.jpg",
+      image: "/images/photo/leaders/Сурогина.jpg",
     },
     {
       name: "Кузнецова Елена Юрьевна",
       position: "Заведующая по виду спорта",
-      image: "/images/team/8.jpg",
+      image: "/images/photo/leaders/Кузнецова.jpg",
     },
     {
       name: "Бондарь Татьяна Сергеевна",
       position: "Заведующая по виду спорта",
-      image: "/images/team/8.jpg",
+      image: "/images/photo/leaders/Бондарь.jpg",
     },
     {
       name: "Полякова Елена Валерьевна",
       position: "Специалист по кадрам",
-      image: "/images/team/8.jpg",
+      image: "/images/photo/leaders/Полякова.jpg",
     },
     {
       name: "Николаев Дмитрий Павлович",
       position: "Главный инженер",
-      image: "/images/team/2.jpg",
+      image: "/images/photo/leaders/Николаев.jpg",
     },
     {
       name: "Майоров Дмитрий Николаевич",
       position: "Специалист по охране труда",
-      image: "/images/team/2.jpg",
+      image: "/images/photo/leaders/Майоров.jpg",
     },
     {
       name: "Дыкуха Лидия Николаевна",
       position: "Медицинская сестра",
-      image: "/images/team/8.jpg",
+      image: "/images/photo/plug.jpg",
     },
   ];
   

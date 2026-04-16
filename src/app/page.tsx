@@ -47,19 +47,46 @@ interface Coach {
     image: string
 }
 
+const COACHES_CACHE_KEY = 'cachedCoaches_v2'
+
 export default function Page() {
     const [shuffledCoaches, setShuffledCoaches] = useState<Coach[]>([])
 
     useEffect(() => {
-        if (typeof window !== 'undefined') {
-            const stored = localStorage.getItem('cachedCoaches')
-            if (stored) {
-                setShuffledCoaches(JSON.parse(stored))
-            } else {
-                const result = coachesData.sort(() => Math.random() - 0.5).slice(0, 8)
-                localStorage.setItem('cachedCoaches', JSON.stringify(result))
-                setShuffledCoaches(result)
+        if (typeof window === 'undefined') {
+            return
+        }
+
+        const shuffled = [...coachesData].sort(() => Math.random() - 0.5).slice(0, 8)
+        const byId = new Map(coachesData.map((coach) => [coach.id, coach]))
+        const stored = localStorage.getItem(COACHES_CACHE_KEY)
+
+        if (!stored) {
+            localStorage.setItem(COACHES_CACHE_KEY, JSON.stringify(shuffled))
+            setShuffledCoaches(shuffled)
+            return
+        }
+
+        try {
+            const parsed = JSON.parse(stored) as Coach[]
+            if (!Array.isArray(parsed) || parsed.length === 0) {
+                throw new Error('Invalid cached coaches payload')
             }
+
+            // Keep previous order from cache but always hydrate with актуальные данные (включая image).
+            const refreshed = parsed
+                .map((coach) => byId.get(coach.id))
+                .filter((coach): coach is Coach => Boolean(coach))
+
+            if (refreshed.length === 0) {
+                throw new Error('Cached coaches are stale')
+            }
+
+            localStorage.setItem(COACHES_CACHE_KEY, JSON.stringify(refreshed))
+            setShuffledCoaches(refreshed)
+        } catch {
+            localStorage.setItem(COACHES_CACHE_KEY, JSON.stringify(shuffled))
+            setShuffledCoaches(shuffled)
         }
     }, [])
 

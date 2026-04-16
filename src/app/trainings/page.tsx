@@ -104,7 +104,7 @@ export default function TrainingsPage() {
                                     alt={coach.name}
                                     width={60}
                                     height={60}
-                                    className="rounded-full object-cover shrink-0"
+                                    className="size-16 rounded-full object-cover shrink-0"
                                   />
                                   <div>
                                     <p className="text-primary-blue dark:text-white text-sm leading-tight">
@@ -148,7 +148,7 @@ export default function TrainingsPage() {
                   alt={selectedCoach.name}
                   width={100}
                   height={100}
-                  className="rounded-full object-cover"
+                  className="size-24 rounded-full object-cover"
                 />
                 <h4 className="text-xl font-semibold text-primary-blue">{selectedCoach.name}</h4>
                 <p className="text-slate-400 text-sm">Дата рождения: {selectedCoach.birthdate}</p>
