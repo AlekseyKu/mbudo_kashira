@@ -152,7 +152,7 @@ export const coachesData = [
     sport: 'Бокс',
     category: '1 категория',
     experience: 26,
-    image: '/images/photo/plug.jpg'
+    image: '/images/photo/coaches/Навознов.png'
   },
   {
     id: 19,

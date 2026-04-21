@@ -81,11 +81,11 @@ export default function Navbar({navlight,tagline}:{navlight:any, tagline:any}) {
 
 
                         {/* === О НАС === */}
-                        <li className={`has-submenu parent-parent-menu-item ${['/aboutus', '/team', '/trainings', '/objects', '/vacancies', '/partners'].includes(manu) ? 'active' : ''}`}>
+                        <li className={`has-submenu parent-parent-menu-item ${['/aboutus', '/how-we-work', '/team', '/trainings', '/objects', '/vacancies', '/partners'].includes(manu) ? 'active' : ''}`}>
                             <Link
                                 href="#"
                                 onClick={() => setSubManu(subManu === '/cours-item' ? '' : '/cours-item')}
-                                className={`${['/aboutus', '/team', '/trainings', '/objects', '/vacancies', '/partners'].includes(manu) ? 'text-accent-red' : ''}`}
+                                className={`${['/aboutus', '/how-we-work', '/team', '/trainings', '/objects', '/vacancies', '/partners'].includes(manu) ? 'text-accent-red' : ''}`}
                             >
                                 О НАС
                             </Link>
@@ -94,6 +94,11 @@ export default function Navbar({navlight,tagline}:{navlight:any, tagline:any}) {
                                 <li>
                                     <Link href="/aboutus" className={`sub-menu-item ${manu === '/aboutus' ? 'text-accent-red' : ''}`}>
                                         О ШКОЛЕ
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/how-we-work" className={`sub-menu-item ${manu === '/how-we-work' ? 'text-accent-red' : ''}`}>
+                                        КАК МЫ РАБОТАЕМ
                                     </Link>
                                 </li>
                                 <li>
@@ -126,11 +131,11 @@ export default function Navbar({navlight,tagline}:{navlight:any, tagline:any}) {
 
 
                         {/* === УСЛУГИ === */}
-                        <li className={`has-submenu parent-parent-menu-item ${['/services/training-schedule', '/services/pool-schedule', '/services/paid-services'].includes(manu) ? 'active' : ''}`}>
+                        <li className={`has-submenu parent-parent-menu-item ${['/services/training-schedule', '/services/pool-schedule', '/services/paid-services', '/registration-form'].includes(manu) ? 'active' : ''}`}>
                             <Link
                                 href="#"
                                 onClick={() => setSubManu(subManu === '/services-item' ? '' : '/services-item')}
-                                className={`${['/services/training-schedule', '/services/pool-schedule', '/services/paid-services'].includes(manu) ? 'text-accent-red' : ''}`}
+                                className={`${['/services/training-schedule', '/services/pool-schedule', '/services/paid-services', '/registration-form'].includes(manu) ? 'text-accent-red' : ''}`}
                             >
                                 УСЛУГИ
                             </Link>
@@ -149,6 +154,11 @@ export default function Navbar({navlight,tagline}:{navlight:any, tagline:any}) {
                                 <li>
                                     <Link href="/services/paid-services" className={`sub-menu-item ${manu === '/services/paid-services' ? 'text-accent-red' : ''}`}>
                                         ПЛАТНЫЕ УСЛУГИ
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/registration-form" className={`sub-menu-item ${manu === '/registration-form' ? 'text-accent-red' : ''}`}>
+                                        РЕГИСТРАЦИОННАЯ ФОРМА
                                     </Link>
                                 </li>
                             </ul>
