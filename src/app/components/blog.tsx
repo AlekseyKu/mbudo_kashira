@@ -9,14 +9,23 @@ export default function Blog() {
   const [selectedPost, setSelectedPost] = useState<VKPost | null>(null)
 
   useEffect(() => {
-    const fetchCachedPosts = async () => {
-      const res = await fetch('/vk-posts-cache.json')
-      const json = await res.json()
-      if (!json.error) {
-        setPosts(json.response.items.slice(0, 3))
+    const fetchPosts = async () => {
+      try {
+        const res = await fetch('/api/vk-posts')
+        const json = await res.json()
+        if (json.error) return
+
+        const items: VKPost[] = json.response?.items ?? []
+        const latest = [...items]
+          .sort((a, b) => b.date - a.date)
+          .slice(0, 3)
+
+        setPosts(latest)
+      } catch {
+        // без постов на главной, если API недоступен
       }
     }
-    fetchCachedPosts()
+    fetchPosts()
   }, [])
 
   return (

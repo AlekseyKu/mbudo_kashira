@@ -142,6 +142,16 @@ export default function Footer() {
                             </Link>
                             {/* <p className="mb-0 text-gray-300">© {new Date().getFullYear()} МБУДО Cпортивная школа «Кашира» <i className="mdi mdi-heart text-red-600"></i> by <Link href="https://dexstudioapp.site/" target="_blank" className="text-reset">DEXSA</Link>.</p> */}
                             <p className="mb-0 text-gray-300">{new Date().getFullYear()} © МБУДО Cпортивная школа «Кашира»</p>
+                            <p className="mb-0 mt-2 text-gray-400 text-sm">
+                                <Link
+                                    href="https://yandex.ru/maps/org/kopi_print/118480378524/?ll=38.053237%2C54.885477&z=17"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:text-accent-red duration-500 ease-in-out"
+                                >
+                                    Разработка сайта - Копи-принт
+                                </Link>
+                            </p>
                         </div>
 
                         {/* <div className="md:text-right text-center">

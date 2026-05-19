@@ -28,7 +28,7 @@ export interface staffData {
       image: "/images/photo/leaders/Сурогина.jpg",
     },
     {
-      name: "Кузнецова Елена Юрьевна",
+      name: "Кузнецова Елена Игоревна",
       position: "Заведующая по виду спорта",
       image: "/images/photo/leaders/Кузнецова.jpg",
     },
@@ -51,11 +51,6 @@ export interface staffData {
       name: "Майоров Дмитрий Николаевич",
       position: "Специалист по охране труда",
       image: "/images/photo/leaders/Майоров.jpg",
-    },
-    {
-      name: "Дыкуха Лидия Николаевна",
-      position: "Медицинская сестра",
-      image: "/images/photo/plug.jpg",
     },
   ];
   
