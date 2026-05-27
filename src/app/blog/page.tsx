@@ -10,26 +10,54 @@ import VkPostModal from '../components/vk/vkPostModal'
 import AnimatedHead from '../components/animated-head'
 import AnimatedDiv from '../components/animated-div'
 
+const PAGE_SIZE = 9
+const VK_GROUP_URL = 'https://vk.com/club226006575'
+
 export default function BlogsPage() {
   const [posts, setPosts] = useState<VKPost[]>([])
+  const [totalCount, setTotalCount] = useState(0)
   const [error, setError] = useState<string | null>(null)
   const [selectedPost, setSelectedPost] = useState<VKPost | null>(null)
-  const [visibleCount, setVisibleCount] = useState(9)
+  const [loading, setLoading] = useState(true)
+  const [loadingMore, setLoadingMore] = useState(false)
+
+  const fetchPosts = async (offset: number, append: boolean) => {
+    const res = await fetch(`/api/vk-posts?offset=${offset}&count=${PAGE_SIZE}`)
+    const json = await res.json()
+    if (json.error) throw new Error(json.error.error_msg)
+
+    const items: VKPost[] = json.response?.items ?? []
+    setTotalCount(json.response?.count ?? 0)
+    setPosts((prev) => (append ? [...prev, ...items] : items))
+  }
 
   useEffect(() => {
-    const fetchVKPosts = async () => {
+    const loadInitialPosts = async () => {
       try {
-        const res = await fetch('/api/vk-posts')
-        const json = await res.json()
-        if (json.error) throw new Error(json.error.error_msg)
-        setPosts(json.response.items)
+        setLoading(true)
+        await fetchPosts(0, false)
       } catch (err: any) {
         setError(err.message)
+      } finally {
+        setLoading(false)
       }
     }
 
-    fetchVKPosts()
+    loadInitialPosts()
   }, [])
+
+  const handleLoadMore = async () => {
+    try {
+      setLoadingMore(true)
+      await fetchPosts(posts.length, true)
+    } catch (err: any) {
+      setError(err.message)
+    } finally {
+      setLoadingMore(false)
+    }
+  }
+
+  const hasMore = posts.length < totalCount
 
   return (
     <>
@@ -62,22 +90,36 @@ export default function BlogsPage() {
               Ошибка при загрузке постов: {error}
             </div>
           )}
+          {loading && (
+            <p className="text-center text-slate-500 dark:text-slate-400 mb-6">
+              Загрузка постов...
+            </p>
+          )}
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {posts.slice(0, visibleCount).map((post, i) => (
-              <AnimatedDiv  transition={{ delay: 0.15 * i }}>
+            {posts.map((post, i) => (
+              <AnimatedDiv key={post.id} transition={{ delay: 0.15 * (i % PAGE_SIZE) }}>
                 <VkPostCard
-                  key={post.id}
                   post={post}
                   onOpen={setSelectedPost}
                 />
               </AnimatedDiv>
-
             ))}
           </div>
 
-          <div className="text-center mt-8">
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
+            {hasMore && (
+              <button
+                type="button"
+                onClick={handleLoadMore}
+                disabled={loadingMore || loading}
+                className="inline-block px-6 py-3 text-sm font-medium border border-primary-blue text-primary-blue bg-transparent hover:bg-primary-blue hover:text-white disabled:opacity-60 disabled:cursor-not-allowed dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-primary-blue rounded-md transition"
+              >
+                {loadingMore ? 'Загрузка...' : 'Загрузить еще'}
+              </button>
+            )}
             <a
-              href="https://vk.com/public177031794"
+              href={VK_GROUP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-6 py-3 text-sm font-medium border border-primary-blue text-primary-blue bg-transparent hover:bg-primary-blue hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-primary-blue rounded-md transition"
