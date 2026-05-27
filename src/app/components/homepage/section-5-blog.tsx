@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Blog from '@/app/components/blog'
 
@@ -35,6 +36,20 @@ const BlogSection = () => {
                 viewport={{ once: true }}
             >
                 <Blog />
+            </motion.div>
+
+            <motion.div
+                className="grid md:grid-cols-12 grid-cols-1 mt-6"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                viewport={{ once: true }}
+            >
+                <div className="md:col-span-12 text-center">
+                    <Link href="/blog" className="text-slate-400 hover:text-accent-red duration-500 ease-in-out">
+                        ПЕРЕЙТИ В БЛОГ <i className="mdi mdi-arrow-right align-middle"></i>
+                    </Link>
+                </div>
             </motion.div>
         </motion.section>
     )
